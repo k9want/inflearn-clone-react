@@ -27,7 +27,7 @@ function RoadmapsPanelLeft() {
 
         <div className="nav-list-group">
           <div
-            className={'nav-list-wrapper ' + (open[0] ? 'is-active' : null)}
+            className={'nav-list-wrapper' + (open[0] ? ' is-active' : '')}
             onClick={() => openList(0)}
           >
             <div className="nav-toggle">분야별</div>
@@ -72,7 +72,7 @@ function RoadmapsPanelLeft() {
           </div>
 
           <div
-            className={'nav-list-wrapper ' + (open[1] ? 'is-active' : null)}
+            className={'nav-list-wrapper' + (open[1] ? ' is-active' : '')}
             onClick={() => openList(1)}
           >
             <div className="nav-toggle">시작 레벨</div>
@@ -105,7 +105,7 @@ function RoadmapsPanelLeft() {
           </div>
 
           <div
-            className={'nav-list-wrapper ' + (open[2] ? 'is-active' : null)}
+            className={'nav-list-wrapper' + (open[2] ? 'is-active ' : '')}
             onClick={() => openList(2)}
           >
             <div className="nav-toggle">로드맵</div>
