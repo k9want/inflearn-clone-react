@@ -27,12 +27,10 @@ function RoadmapsPanelLeft() {
 
         <div className="nav-list-group">
           <div
-            className={open[0] ? 'nav-toggle is-active' : 'nav-toggle'}
+            className={'nav-list-wrapper ' + (open[0] ? 'is-active' : null)}
             onClick={() => openList(0)}
           >
-            분야별
-          </div>
-          {open[0] ? (
+            <div className="nav-toggle">분야별</div>
             <div className="nav-list">
               <div className="nav-checkbox">
                 <input type="checkbox" id="term1" className="visually-hidden" />
@@ -71,15 +69,13 @@ function RoadmapsPanelLeft() {
                 <label for="term9">교양</label>
               </div>
             </div>
-          ) : null}
+          </div>
 
           <div
-            className={'nav-toggle ' + (open[1] ? 'is-active' : null)}
+            className={'nav-list-wrapper ' + (open[1] ? 'is-active' : null)}
             onClick={() => openList(1)}
           >
-            시작 레벨
-          </div>
-          {open[1] ? (
+            <div className="nav-toggle">시작 레벨</div>
             <div className="nav-list">
               <div className="nav-checkbox">
                 <input
@@ -106,15 +102,13 @@ function RoadmapsPanelLeft() {
                 <label for="level3">중급</label>
               </div>
             </div>
-          ) : null}
+          </div>
 
           <div
-            className={'nav-toggle ' + (open[2] ? 'is-active' : null)}
+            className={'nav-list-wrapper ' + (open[2] ? 'is-active' : null)}
             onClick={() => openList(2)}
           >
-            로드맵
-          </div>
-          {open[2] ? (
+            <div className="nav-toggle">로드맵</div>
             <div className="nav-list">
               <div className="nav-checkbox">
                 <input
@@ -133,7 +127,7 @@ function RoadmapsPanelLeft() {
                 <label for="enroll2">참여 로드맵</label>
               </div>
             </div>
-          ) : null}
+          </div>
         </div>
       </nav>
 
