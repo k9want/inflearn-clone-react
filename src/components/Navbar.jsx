@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import useScrollNavbar from '../hook/useScrollNavbar'
 
 export default function Navbar() {
   return (
-    <nav className="navbar">
+    <nav className={'navbar' + (useScrollNavbar() ? ' fixed' : '')}>
       <div className="container">
         <div className="navbar-wrapper">
           <button type="button" className="mobile-left-icon lg-hidden">

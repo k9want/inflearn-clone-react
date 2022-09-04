@@ -2019,7 +2019,14 @@ ol {
     padding: 0 32px;
   }
 }
-
+.navbar.fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 hsla(0deg, 0%, 81%, 0.5);
+  z-index: 74;
+}
 .navbar-wrapper {
   font-size: 16px;
   line-height: 24px;
