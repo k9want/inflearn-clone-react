@@ -1,8 +1,9 @@
 import React from 'react'
+import useLoginModal from '../hook/useLoginModal'
 
-export default function Banner() {
+export default function Banner(props) {
   return (
-    <header className="banner">
+    <header className="banner" style={useLoginModal(props.loginModal)}>
       <div className="container">
         <div className="banner-wrapper">
           <div className="banner-left">

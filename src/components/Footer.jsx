@@ -1,8 +1,9 @@
 import React from 'react'
+import useLoginModal from '../hook/useLoginModal'
 
-export default function Footer() {
+export default function Footer(props) {
   return (
-    <footer>
+    <footer style={useLoginModal(props.loginModal)}>
       <div className="wrapper">
         <div className="menu-list">
           <div className="menu">

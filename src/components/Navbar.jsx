@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import useLoginModal from '../hook/useLoginModal'
 import useScrollNavbar from '../hook/useScrollNavbar'
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
-    <nav className={'navbar' + (useScrollNavbar() ? ' fixed' : '')}>
+    <nav
+      className={'navbar' + (useScrollNavbar() ? ' fixed' : '')}
+      style={useLoginModal(props.loginModal)}
+    >
       <div className="container">
         <div className="navbar-wrapper">
           <button type="button" className="mobile-left-icon lg-hidden">
@@ -71,7 +74,11 @@ export default function Navbar() {
               <i className="ic-search"></i>
             </div>
 
-            <button className="btn-nav-login" type="button">
+            <button
+              className="btn-nav-login"
+              type="button"
+              onClick={() => props.setLoginModal(true)}
+            >
               로그인
             </button>
 
