@@ -1,7 +1,59 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+
+const userDummy = {
+  email: 'test1234@naver.com',
+  pw: 'test1234!',
+}
 
 function LoginModal(props) {
+  const [email, setEmail] = useState('')
+  const [pw, setPw] = useState('')
+  const [emailValid, setEmailValid] = useState(false)
+  const [pwValid, setPwValid] = useState(false)
+
   const [hiddenPw, setHiddenPw] = useState(true)
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value)
+    const regex =
+      /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
+
+    if (regex.test(e.target.value)) {
+      setEmailValid(true)
+    } else {
+      setEmailValid(false)
+    }
+  }
+
+  const handlePw = (e) => {
+    setPw(e.target.value)
+    const regex =
+      /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{8,20}$/
+    if (regex.test(e.target.value)) {
+      setPwValid(true)
+    } else {
+      setPwValid(false)
+    }
+  }
+
+  const onClickLoginButton = () => {
+    if (!emailValid || !pwValid) {
+      alert('이메일 또는 비밀번호를 확인해주세요')
+      return
+    }
+
+    if (email === userDummy.email && pw === userDummy.pw) {
+      alert('로그인 성공했습니다.')
+    } else {
+      alert('이메일 또는 비밀번호를 확인해주세요')
+    }
+  }
+
+  const onKeyPressInput = (e) => {
+    if (e.key === 'Enter') {
+      onClickLoginButton()
+    }
+  }
 
   return (
     <div class="modal">
@@ -51,12 +103,22 @@ function LoginModal(props) {
         <div class="modal-form">
           <div class="modal-login-info">
             <div class="modal-form-input">
-              <input type="email" placeholder="이메일" />
+              <input
+                type="email"
+                placeholder="이메일"
+                onChange={handleEmail}
+                onKeyPress={onKeyPressInput}
+              />
             </div>
 
             {hiddenPw ? (
               <div class="modal-form-input input-password">
-                <input type="password" placeholder="비밀번호" />
+                <input
+                  type="password"
+                  placeholder="비밀번호"
+                  onChange={handlePw}
+                  onKeyPress={onKeyPressInput}
+                />
                 <span
                   class="input-password-toggle-button"
                   onClick={() => setHiddenPw(!hiddenPw)}
@@ -82,7 +144,12 @@ function LoginModal(props) {
               </div>
             ) : (
               <div class="modal-form-input input-password">
-                <input type="text" placeholder="비밀번호" />
+                <input
+                  type="text"
+                  placeholder="비밀번호"
+                  onChange={handlePw}
+                  onKeyPress={onKeyPressInput}
+                />
                 <span
                   class="input-password-toggle-button"
                   onClick={() => setHiddenPw(!hiddenPw)}
@@ -108,7 +175,11 @@ function LoginModal(props) {
               </div>
             )}
           </div>
-          <button type="button" class="modal-button">
+          <button
+            type="button"
+            class="modal-button"
+            onClick={onClickLoginButton}
+          >
             로그인
           </button>
         </div>

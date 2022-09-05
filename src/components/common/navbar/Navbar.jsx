@@ -1,5 +1,5 @@
-import useLoginModal from '../hook/useLoginModal'
-import useScrollNavbar from '../hook/useScrollNavbar'
+import useLoginModal from '../../../hook/useLoginModal'
+import useScrollNavbar from '../../../hook/useScrollNavbar'
 
 export default function Navbar(props) {
   return (
