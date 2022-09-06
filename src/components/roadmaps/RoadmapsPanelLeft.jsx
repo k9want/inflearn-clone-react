@@ -105,7 +105,7 @@ function RoadmapsPanelLeft() {
           </div>
 
           <div
-            className={'nav-list-wrapper' + (open[2] ? 'is-active ' : '')}
+            className={'nav-list-wrapper' + (open[2] ? ' is-active ' : '')}
             onClick={() => openList(2)}
           >
             <div className="nav-toggle">로드맵</div>
