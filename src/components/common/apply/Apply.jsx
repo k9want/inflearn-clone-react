@@ -1,9 +1,8 @@
 import React from 'react'
-import useLoginModal from '../../../hook/useLoginModal'
 
-export default function Apply(props) {
+export default function Apply() {
   return (
-    <section className="apply" style={useLoginModal(props.loginModal)}>
+    <section className="apply">
       <div className="apply-wrapper">
         <div className="apply-card">
           <h3 className="apply-title sm-hidden">지식공유자 되기</h3>
