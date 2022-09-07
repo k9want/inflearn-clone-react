@@ -1,12 +1,8 @@
 import React from 'react'
-import useLoginModal from '../../hook/useLoginModal'
 
-export default function RoadmapsSearch(props) {
+export default function RoadmapsSearch() {
   return (
-    <section
-      className="roadmap-search-section"
-      style={useLoginModal(props.loginModal)}
-    >
+    <section className="roadmap-search-section">
       <h1>시작부터 실전까지. 로드맵</h1>
       <p>잘 설계된 로드맵을 따라 효율적으로 강의를 학습하세요.</p>
       <p>좋은 로드맵을 다른 사람과 공유하고 함께 들어요.</p>

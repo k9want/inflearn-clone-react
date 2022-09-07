@@ -1,25 +1,26 @@
 import { useState } from 'react'
-import Apply from './components/common/apply/Apply'
-import Banner from './components/common/banner/Banner'
-import LoginModal from './components/common/navbar/LoginModal'
+import Header from './components/common/header/Header'
 import Footer from './components/common/footer/Footer'
-import Navbar from './components/common/navbar/Navbar'
-import RoadmapsMain from './components/roadmaps/RoadmapsMain'
-import RoadmapsSearch from './components/roadmaps/RoadmapsSearch'
+import { Routes, Route } from 'react-router-dom'
+import RoadMaps from './pages/RoadMaps'
+import Index from './pages/Index'
+import useLoginModal from './hook/useLoginModal'
 
 function App() {
   const [loginModal, setLoginModal] = useState(false)
-
   return (
     <div className="App">
-      <Banner loginModal={loginModal} />
-      <Navbar setLoginModal={setLoginModal} loginModal={loginModal} />
-      <RoadmapsSearch loginModal={loginModal} />
-      <RoadmapsMain loginModal={loginModal} />
-      <Apply loginModal={loginModal} />
-      <Footer loginModal={loginModal} />
+      <Header setLoginModal={setLoginModal} loginModal={loginModal} />
+      <Routes>
+        <Route path="" element={<Index />} style={useLoginModal(loginModal)} />
 
-      {loginModal ? <LoginModal setLoginModal={setLoginModal} /> : null}
+        <Route
+          path="/roadmaps"
+          element={<RoadMaps loginModal={loginModal} />}
+        />
+      </Routes>
+
+      <Footer loginModal={loginModal} />
     </div>
   )
 }

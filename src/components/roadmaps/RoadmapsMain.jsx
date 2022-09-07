@@ -1,12 +1,11 @@
 import React from 'react'
-import useLoginModal from '../../hook/useLoginModal'
 import RoadmapsCard from './RoadmapsCard'
 import { roadmapsCardDummy } from './roadmapsCardDummy'
 import RoadmapsPanelLeft from './RoadmapsPanelLeft'
 
-function RoadmapsMain(props) {
+function RoadmapsMain() {
   return (
-    <main id="roadmaps-main" style={useLoginModal(props.loginModal)}>
+    <main id="roadmaps-main">
       <div className="container">
         <div className="roadmaps-nav">
           <div className="roadmaps-nav-left">
