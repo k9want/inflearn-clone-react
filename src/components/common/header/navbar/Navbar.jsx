@@ -83,11 +83,9 @@ export default function Navbar(props) {
               로그인
             </button>
 
-            <a href="/">
-              <button className="btn-nav-signin" type="button">
-                회원가입
-              </button>
-            </a>
+            <Link to="/signup" className="btn-nav-signin" type="button">
+              회원가입
+            </Link>
           </div>
         </div>
       </div>

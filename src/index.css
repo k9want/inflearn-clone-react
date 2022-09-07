@@ -1399,13 +1399,13 @@ ol {
   align-items: center;
   justify-content: center;
   position: fixed;
+  background: rgba(11, 19, 30, 0.37);
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 80;
   overflow: hidden;
-  background: rgba(11, 19, 30, 0.37);
 }
 .modal-wrapper {
   padding: 24px;
@@ -1449,6 +1449,9 @@ ol {
   border-radius: 4px;
   background-color: #fff;
 }
+.modal-form-input input::placeholder {
+  color: #dee2e6;
+}
 .modal-form-input:focus-within {
   border-color: #00c471;
 }
@@ -1458,6 +1461,9 @@ ol {
   justify-content: space-between;
 }
 .modal-form-input.input-password .input-password-toggle-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 .modal-form-input:first-child {
