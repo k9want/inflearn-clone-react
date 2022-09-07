@@ -1,5 +1,6 @@
-import useLoginModal from '../../../hook/useLoginModal'
-import useScrollNavbar from '../../../hook/useScrollNavbar'
+import useLoginModal from '../../../../hook/useLoginModal'
+import useScrollNavbar from '../../../../hook/useScrollNavbar'
+import { Link } from 'react-router-dom'
 
 export default function Navbar(props) {
   return (
@@ -28,7 +29,7 @@ export default function Navbar(props) {
           <div className="navbar-left">
             <h1 className="visually-hidden">navigation bar</h1>
 
-            <a href="/" className="logo">
+            <Link to="/" className="logo">
               <svg
                 id="ic-brand-logo"
                 xmlns="http://www.w3.org/2000/svg"
@@ -48,22 +49,22 @@ export default function Navbar(props) {
                 ></path>
                 <title>인프런 브랜드 로고</title>
               </svg>
-            </a>
+            </Link>
             <ul className="navbar-list lg-only">
               <li>
-                <a href="/">강의</a>
+                <Link to="/roadmaps">강의</Link>
               </li>
               <li>
-                <a href="./roadmaps.html">로드맵</a>
+                <Link to="/roadmaps">로드맵</Link>
               </li>
               <li>
-                <a href="/">멘토링</a>
+                <Link to="/">멘토링</Link>
               </li>
               <li>
-                <a href="/">커뮤니티</a>
+                <Link to="/">커뮤니티</Link>
               </li>
               <li>
-                <a href="/">인프런</a>
+                <Link to="/">인프런</Link>
               </li>
             </ul>
           </div>

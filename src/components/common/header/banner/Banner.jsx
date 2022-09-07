@@ -1,5 +1,5 @@
 import React from 'react'
-import useLoginModal from '../../../hook/useLoginModal'
+import useLoginModal from '../../../../hook/useLoginModal'
 
 export default function Banner(props) {
   return (
