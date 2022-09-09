@@ -4,7 +4,7 @@ import Footer from './components/common/footer/Footer'
 import { Routes, Route } from 'react-router-dom'
 import RoadMaps from './pages/RoadMaps'
 import Index from './pages/Index'
-import useLoginModal from './hook/useLoginModal'
+import SignUp from './pages/SignUp'
 
 function App() {
   const [loginModal, setLoginModal] = useState(false)
@@ -12,7 +12,8 @@ function App() {
     <div className="App">
       <Header setLoginModal={setLoginModal} loginModal={loginModal} />
       <Routes>
-        <Route path="" element={<Index />} style={useLoginModal(loginModal)} />
+        <Route path="" element={<Index loginModal={loginModal} />} />
+        <Route path="/signup" element={<SignUp loginModal={loginModal} />} />
 
         <Route
           path="/roadmaps"
