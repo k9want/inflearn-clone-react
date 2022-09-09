@@ -129,6 +129,12 @@ function SignUpForm() {
     setHiddenErrorModal(false)
   }
 
+  const onKeyPressInput = (e) => {
+    if (e.key === 'Enter') {
+      handleHiddenErrorModel()
+    }
+  }
+
   return (
     <div className="signup-form">
       <div className="signup-form-info">
@@ -142,6 +148,7 @@ function SignUpForm() {
             value={email}
             placeholder="example@inflab.com"
             onChange={handleEmail}
+            onKeyPress={onKeyPressInput}
           />
         </div>
         {!emailValid && email.length > 0 && (
@@ -162,6 +169,7 @@ function SignUpForm() {
               value={pw}
               placeholder="******"
               onChange={handlePw}
+              onKeyPress={onKeyPressInput}
             />
             <span
               className="input-password-toggle-button"
@@ -194,6 +202,7 @@ function SignUpForm() {
               value={pw}
               placeholder="******"
               onChange={handlePw}
+              onKeyPress={onKeyPressInput}
             />
             <span
               className="input-password-toggle-button"
@@ -259,6 +268,7 @@ function SignUpForm() {
               value={pwConfirm}
               placeholder="******"
               onChange={handlePwConfirm}
+              onKeyPress={onKeyPressInput}
             />
             <span
               className="input-password-toggle-button"
@@ -291,6 +301,7 @@ function SignUpForm() {
               value={pwConfirm}
               placeholder="******"
               onChange={handlePwConfirm}
+              onKeyPress={onKeyPressInput}
             />
             <span
               className="input-password-toggle-button"
