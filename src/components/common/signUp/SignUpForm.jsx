@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import SignUpErrorModal from './SignUpErrorModal'
+import SignUpSendEmailModal from './SignUpSendEmailModal'
 
 /*
 email, pwConfirm -> red
@@ -19,6 +21,11 @@ function SignUpForm() {
   const [hiddenPwConfirm, setHiddenPwConfirm] = useState(true)
 
   const [isChecked, setIsChecked] = useState(false)
+
+  // 가입하기 버튼
+  const [errorDescription, setErrorDescription] = useState('')
+  const [hiddenErrorModal, setHiddenErrorModal] = useState(true)
+  const [hiddenEmailModal, setHiddenEmailModal] = useState(true)
 
   const handleEmail = (e) => {
     setEmail(e.target.value)
@@ -85,6 +92,41 @@ function SignUpForm() {
       copyPwValid[2] = true
     }
     setPwValid(copyPwValid)
+  }
+
+  function errorMessage() {
+    if (!emailValid) {
+      return '이메일 형식이 올바르지 않습니다.'
+    }
+
+    if (!pwValid[0]) {
+      return '비밀번호 에러 : 영문 대소문자/숫자/특수 문자 2가지 이상 포함되어야 합니다.'
+    }
+
+    if (!pwValid[1]) {
+      return '비밀번호 에러 : 최소 8자 이상 32자 이하로 입력해주세요.'
+    }
+
+    if (!pwValid[2]) {
+      return '비밀번호 에러 : 연속해서 3자 이상 동일한 문자는 사용이 불가능합니다.'
+    }
+
+    if (!pwConfirmValid) {
+      return '비밀번호가 일치하지 않습니다.'
+    }
+
+    return 0
+  }
+
+  const handleHiddenErrorModel = (e) => {
+    const errMsg = errorMessage()
+    if (!errMsg) {
+      setHiddenEmailModal(false)
+      return
+    }
+
+    setErrorDescription(errMsg)
+    setHiddenErrorModal(false)
   }
 
   return (
@@ -280,7 +322,11 @@ function SignUpForm() {
           </span>
         )}
       </div>
-      <button type="submit" className="signup-button">
+      <button
+        type="submit"
+        className="signup-button"
+        onClick={handleHiddenErrorModel}
+      >
         가입하기
       </button>
       <div className="signup-footer">
@@ -328,6 +374,17 @@ function SignUpForm() {
           />
         </div>
       </div>
+
+      {!hiddenErrorModal && (
+        <SignUpErrorModal
+          setHiddenErrorModal={setHiddenErrorModal}
+          errorDescription={errorDescription}
+        />
+      )}
+
+      {!hiddenEmailModal ? (
+        <SignUpSendEmailModal setHiddenEmailModal={setHiddenEmailModal} />
+      ) : null}
     </div>
   )
 }
