@@ -10,13 +10,13 @@ import Review from '../components/index/Review'
 import RoadMap from '../components/index/RoadMap'
 import Search from '../components/index/Search'
 import Service from '../components/index/Service'
-import Swiper from '../components/index/Swiper'
+import MainSwiper from '../components/index/MainSwiper'
 import useLoginModal from '../hook/useLoginModal'
 
 function Index(props) {
   return (
     <main style={useLoginModal(props.loginModal)}>
-      <Swiper />
+      <MainSwiper />
       <Search />
       <HashTag />
       <FreeCourse />
