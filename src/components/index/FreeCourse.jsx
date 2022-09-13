@@ -1,10 +1,12 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css/bundle'
-// import 'swiper/css/navigation'
+import { useRef } from 'react'
 import { Navigation } from 'swiper'
-
 function FreeCourse({ freeCourse }) {
+  const navigationPrevRef = useRef(null)
+  const navigationNextRef = useRef(null)
+
   return (
     <section className="free-course">
       <div className="container">
@@ -22,11 +24,25 @@ function FreeCourse({ freeCourse }) {
 
           <div className="card-list">
             <Swiper
+              navigation={{
+                prevEl: navigationPrevRef.current,
+                nextEl: navigationNextRef.current,
+              }}
+              onSwiper={(swiper) => {
+                setTimeout(() => {
+                  // Override prevEl & nextEl now that refs are defined
+                  swiper.params.navigation.prevEl = navigationPrevRef.current
+                  swiper.params.navigation.nextEl = navigationNextRef.current
+
+                  // Re-init navigation
+                  swiper.navigation.destroy()
+                  swiper.navigation.init()
+                  swiper.navigation.update()
+                })
+              }}
               modules={[Navigation]}
-              navigation={true}
               tag="div"
               slidesPerView={5}
-              onInit={(Swiper) => console.log('freeCourse init')}
             >
               {freeCourse.map((data, i) => {
                 return (
@@ -149,6 +165,13 @@ function FreeCourse({ freeCourse }) {
                 )
               })}
             </Swiper>
+            <div className="course-swiper-btn prev" ref={navigationPrevRef}>
+              <i className="ic-previous course-swiper-btn-inner"></i>
+            </div>
+
+            <div className="course-swiper-btn next" ref={navigationNextRef}>
+              <i className="ic-next course-swiper-btn-inner"></i>
+            </div>
           </div>
         </div>
       </div>

@@ -1078,6 +1078,57 @@ ol {
   cursor: grab;
 }
 
+.course-swiper-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 78;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  margin: auto 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  opacity: 0.85;
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 10%);
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+
+.course-swiper-btn.prev {
+  left: -24px;
+}
+.course-swiper-btn.next {
+  right: -23px;
+}
+.course-swiper-btn:hover {
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 30%);
+}
+.course-swiper-btn-inner {
+  color: #333;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.swiper-button-disabled {
+  border: 1px solid #efefef;
+  box-shadow: 0 2px 8px 0 transparent;
+  cursor: not-allowed;
+}
+.swiper-button-disabled:hover {
+  box-shadow: none;
+}
+
+.swiper-button-disabled .course-swiper-btn-inner {
+  color: #efefef;
+}
+
 .roadmap-card {
   margin-right: 6px;
 }
@@ -2851,6 +2902,7 @@ section[class$='-course'] {
 }
 
 .card-list {
+  position: relative;
   display: flex;
   justify-content: start;
   align-items: start;

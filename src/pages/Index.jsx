@@ -12,14 +12,15 @@ import Search from '../components/index/Search'
 import Service from '../components/index/Service'
 import MainSwiper from '../components/index/MainSwiper'
 import useLoginModal from '../hook/useLoginModal'
+import { mainPageDummy } from '../components/index/mainPageDummy'
 
 function Index(props) {
   return (
     <main style={useLoginModal(props.loginModal)}>
-      <MainSwiper />
+      <MainSwiper mainBanner={mainPageDummy.result.mainBanner} />
       <Search />
       <HashTag />
-      <FreeCourse />
+      <FreeCourse freeCourse={mainPageDummy.result.freeCourse} />
       <NewbieCourse />
       <RoadMap />
       <CurationCourse />
