@@ -1,5 +1,15 @@
 export const mainPageDummy = {
   result: {
+    mainBullets: [
+      '인프런 동료찾기',
+      '2022 추석 위크',
+      '신규 강의 🎁',
+      '입문 로드맵',
+      '인프콘 다시보기',
+      'Top 50 👑',
+      '지식공유신청',
+      '인프런은 🌱',
+    ],
     mainBanner: [
       {
         imgUrl: 'main1.gif',
@@ -11,7 +21,6 @@ export const mainPageDummy = {
         title2: '동료를 찾아요 🌿',
         description1: '#우리 #함께성장해요',
         description2: '#동료여어디계신가요?',
-        bullet: '인프런 동료찾기',
       },
       {
         imgUrl: 'main2.png',
@@ -23,7 +32,6 @@ export const mainPageDummy = {
         title2: '풍성한 추석 위크 🌕',
         description1: '매일 성장하는 나를 만드는 시간',
         description2: '',
-        bullet: '2022 추석 위크',
       },
       {
         imgUrl: 'main3.gif',
@@ -35,7 +43,6 @@ export const mainPageDummy = {
         title2: '',
         description1: '매일 업데이트 되는',
         description2: '인프런 신규강의를 만나보세요!',
-        bullet: '신규 강의 🎁',
       },
       {
         imgUrl: 'main4.gif',
@@ -47,7 +54,6 @@ export const mainPageDummy = {
         title2: 'Lv. 1 인프런 로드맵 📖',
         description1: '인프런이 처음이라면, 길라잡이가 되어드릴게요.',
         description2: '',
-        bullet: '입문 로드맵',
       },
       {
         imgUrl: 'main5.png',
@@ -59,7 +65,6 @@ export const mainPageDummy = {
         title2: '온라인에서 다시 만나보세요 🔥',
         description1: '오프닝부터 발표 세션 영상 28개,',
         description2: '토크 콘서트 영상과 클로징까지!',
-        bullet: '인프콘 다시보기',
       },
       {
         imgUrl: 'main6.gif',
@@ -71,7 +76,6 @@ export const mainPageDummy = {
         title2: '현직자 Top 50 먼저 보기 👀',
         description1: '입문부터 실전까지!',
         description2: '믿고 보는 실무자 Pick',
-        bullet: 'Top 50 👑',
       },
       {
         imgUrl: 'main7.gif',
@@ -83,7 +87,6 @@ export const mainPageDummy = {
         title2: '커지는 보람과 보상',
         description1: '인프런 지식공유자로',
         description2: '높은 수익과 가치를 만들어 보세요.',
-        bullet: '지식공유신청',
       },
       {
         imgUrl: 'main8.png',
@@ -95,7 +98,6 @@ export const mainPageDummy = {
         title2: '평등을 추구합니다.',
         description1: '누구나 배움의 기회를 누리고 꿈을 이룰 수 있도록!',
         description2: '인프런과 함께 배우고, 나누고, 성장하세요.',
-        bullet: '인프런은 🌱',
       },
     ],
 

@@ -6,7 +6,7 @@ import { Navigation, Pagination } from 'swiper'
 import { useRef } from 'react'
 import { useState } from 'react'
 
-function MainSwiper({ mainBanner }) {
+function MainSwiper({ mainBanner, mainBullets }) {
   const [currentNum, setCurrentNum] = useState(1)
 
   const navigationPrevRef = useRef(null)
@@ -30,6 +30,21 @@ function MainSwiper({ mainBanner }) {
           prevEl: navigationPrevRef.current,
           nextEl: navigationNextRef.current,
         }}
+        pagination={{
+          clickable: true,
+          el: '.swiper-pagination-list',
+          bulletClass: 'swiper-pagination-btn',
+          bulletActiveClass: 'swiper-pagination-btn-active',
+          renderBullet: (index, className) => {
+            return (
+              '<span class="' +
+              className +
+              '">' +
+              mainBullets[index] +
+              '</span>'
+            )
+          },
+        }}
         onSwiper={(swiper) => {
           setTimeout(() => {
             // Override prevEl & nextEl now that refs are defined
@@ -42,7 +57,7 @@ function MainSwiper({ mainBanner }) {
             swiper.navigation.update()
           })
         }}
-        modules={[Navigation]}
+        modules={[Navigation, Pagination]}
       >
         {mainBanner.map((data, i) => {
           return (
@@ -106,19 +121,7 @@ function MainSwiper({ mainBanner }) {
               </div>
             </div>
             <div className="divider"></div>
-            <div className="swiper-pagination-list">
-              {mainBanner.map((data, i) => {
-                return (
-                  <span
-                    key={`pagination-${i}`}
-                    className="swiper-pagination-btn"
-                    type="button"
-                  >
-                    {data.bullet}
-                  </span>
-                )
-              })}
-            </div>
+            <div className="swiper-pagination-list"></div>
             <button className="swiper-pagination-dropdown" type="button">
               <i className="ic-down"></i>
             </button>

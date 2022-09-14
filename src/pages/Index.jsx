@@ -17,7 +17,10 @@ import { mainPageDummy } from '../components/index/mainPageDummy'
 function Index(props) {
   return (
     <main style={useLoginModal(props.loginModal)}>
-      <MainSwiper mainBanner={mainPageDummy.result.mainBanner} />
+      <MainSwiper
+        mainBanner={mainPageDummy.result.mainBanner}
+        mainBullets={mainPageDummy.result.mainBullets}
+      />
       <Search />
       <HashTag />
       <FreeCourse freeCourse={mainPageDummy.result.freeCourse} />
