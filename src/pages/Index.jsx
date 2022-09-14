@@ -7,7 +7,7 @@ import IndexBanner from '../components/index/IndexBanner'
 import NewbieCourse from '../components/index/NewbieCourse'
 import RecentCourse from '../components/index/RecentCourse'
 import Review from '../components/index/Review'
-import RoadMap from '../components/index/RoadMap'
+import RoadMapCourse from '../components/index/RoadMapCourse'
 import Search from '../components/index/Search'
 import Service from '../components/index/Service'
 import MainSwiper from '../components/index/MainSwiper'
@@ -22,9 +22,9 @@ function Index(props) {
       <HashTag />
       <FreeCourse freeCourse={mainPageDummy.result.freeCourse} />
       <NewbieCourse newbieCourse={mainPageDummy.result.newbieCourse} />
-      <RoadMap />
-      <CurationCourse />
-      <RecentCourse />
+      <RoadMapCourse roadMapCourse={mainPageDummy.result.roadMapCourse} />
+      <CurationCourse curationCourse={mainPageDummy.result.curationCourse} />
+      <RecentCourse recentCourse={mainPageDummy.result.recentCourse} />
       <Review />
       <IndexBanner />
       <Company />

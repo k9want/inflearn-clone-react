@@ -60,14 +60,16 @@ function useCardList(courseData) {
                     <div className="card-content">
                       <div className="lecture-title">{data.lectureTitle}</div>
                       <div className="instructor">{data.instructor}</div>
-                      <div className="review">
-                        <div className="review-avg">
-                          {[...Array(data.starCnt)].map((n, index) => {
-                            return <i className="ic-star-filled"></i>
-                          })}
+                      {data.reviewCnt ? (
+                        <div className="review">
+                          <div className="review-avg">
+                            {[...Array(data.starCnt)].map((n, index) => {
+                              return <i className="ic-star-filled"></i>
+                            })}
+                          </div>
+                          <span className="review-cnt">({data.reviewCnt})</span>
                         </div>
-                        <span className="review-cnt">({data.reviewCnt})</span>
-                      </div>
+                      ) : null}
                       <div className="price">
                         {data.del ? <span class="del">{data.del}</span> : null}
                         <span>{data.price}</span>
