@@ -654,6 +654,7 @@ ol {
   height: 36px;
   padding: 0 16px;
   border-radius: 20px;
+  white-space: nowrap;
 }
 
 .swiper-pagination-controller {
@@ -2970,6 +2971,7 @@ section[class$='-course'] {
   background-color: #fff;
   margin-bottom: 8px;
   margin-right: 8px;
+  white-space: nowrap;
 }
 .review-wrapper .review-left .buttons a:hover {
   background-color: #1dc0781f;
@@ -3029,6 +3031,7 @@ section[class$='-course'] {
   color: #1dc078;
   border: none;
   border-radius: 4px;
+  white-space: nowrap;
 }
 
 .company {
