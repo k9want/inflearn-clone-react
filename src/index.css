@@ -1052,6 +1052,10 @@ ol {
   justify-content: center;
   color: #c5ebf8;
 }
+.card-back .lecture-metas span {
+  margin-left: 0.3rem;
+}
+
 .card-back .lecture-active {
   display: flex;
   flex-direction: column;
