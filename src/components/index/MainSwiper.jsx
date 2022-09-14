@@ -2,28 +2,46 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css/bundle'
 import 'swiper/css/pagination'
-import { Navigation, Pagination } from 'swiper'
+import { Autoplay, Navigation, Pagination } from 'swiper'
 import { useRef } from 'react'
 import { useState } from 'react'
 
 function MainSwiper({ mainBanner, mainBullets }) {
   const [currentNum, setCurrentNum] = useState(1)
 
+  const [isAuto, setIsAuto] = useState(true)
+  const swiperRef = useRef(null)
+
   const navigationPrevRef = useRef(null)
   const navigationNextRef = useRef(null)
+
+  const handleIsAuto = () => {
+    if (isAuto) {
+      swiperRef.current.swiper.autoplay.stop()
+      setIsAuto(false)
+    } else {
+      swiperRef.current.swiper.autoplay.start()
+      setIsAuto(true)
+    }
+  }
 
   return (
     <section className="swiper-section">
       <h1 className="visually-hidden">swiper section</h1>
       <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        ref={swiperRef}
         className="swiper"
         tag="section"
         slidesPerView={1}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
         onInit={(swiper) => setCurrentNum(swiper.realIndex + 1)}
         onSlideChange={(swiper) => {
           setCurrentNum(swiper.realIndex + 1)
         }}
-        onReachEnd={() => console.log('reach')}
         loop="true"
         loopedSlides={SwiperSlide.length}
         navigation={{
@@ -34,6 +52,7 @@ function MainSwiper({ mainBanner, mainBullets }) {
           clickable: true,
           el: '.swiper-pagination-list',
           bulletClass: 'swiper-pagination-btn',
+
           bulletActiveClass: 'swiper-pagination-btn-active',
           renderBullet: (index, className) => {
             return (
@@ -57,7 +76,6 @@ function MainSwiper({ mainBanner, mainBullets }) {
             swiper.navigation.update()
           })
         }}
-        modules={[Navigation, Pagination]}
       >
         {mainBanner.map((data, i) => {
           return (
@@ -100,7 +118,6 @@ function MainSwiper({ mainBanner, mainBullets }) {
           )
         })}
       </Swiper>
-
       <div className="swiper-pagination-group">
         <div className="container">
           <div className="swiper-pagination-wrapper">
@@ -112,8 +129,13 @@ function MainSwiper({ mainBanner, mainBullets }) {
                 <span className="swiper-controller-btn" ref={navigationPrevRef}>
                   <i className="ic-previous"></i>
                 </span>
-                <span className="swiper-controller-btn ">
-                  <i className="ic-pause"></i>
+                <span className="swiper-controller-btn">
+                  <i
+                    className={isAuto ? 'ic-pause' : 'ic-play'}
+                    onClick={() => {
+                      handleIsAuto()
+                    }}
+                  ></i>
                 </span>
                 <span className="swiper-controller-btn" ref={navigationNextRef}>
                   <i className="ic-next"></i>
