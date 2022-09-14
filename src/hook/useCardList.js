@@ -29,6 +29,7 @@ function useCardList(courseData) {
         modules={[Navigation]}
         tag="div"
         slidesPerView={5}
+        slidesPerGroup={5}
       >
         {courseData.map((data, i) => {
           return (
