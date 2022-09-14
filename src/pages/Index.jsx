@@ -21,7 +21,7 @@ function Index(props) {
       <Search />
       <HashTag />
       <FreeCourse freeCourse={mainPageDummy.result.freeCourse} />
-      <NewbieCourse />
+      <NewbieCourse newbieCourse={mainPageDummy.result.newbieCourse} />
       <RoadMap />
       <CurationCourse />
       <RecentCourse />
