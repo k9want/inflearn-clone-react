@@ -145,8 +145,8 @@ export const roadmapsCardDummy = {
     {
       imgUrl: 'roadmaps-15.jpeg',
       level: '입문',
-      tag1: '',
-      tag2: '',
+      tag1: '#게임개발',
+      tag2: '#Unity',
       title: '기획서 작성부터 취업까지 한 번에! - 게임기획 따라하기',
       instructor: 'JamesKim',
       lectures: '4',
