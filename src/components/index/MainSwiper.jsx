@@ -3,9 +3,15 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css/bundle'
 import 'swiper/css/pagination'
 import { Navigation, Pagination } from 'swiper'
+import { useRef } from 'react'
 import { useState } from 'react'
 
 function MainSwiper({ mainBanner }) {
+  const [currentNum, setCurrentNum] = useState(1)
+
+  const navigationPrevRef = useRef(null)
+  const navigationNextRef = useRef(null)
+
   return (
     <section className="swiper-section">
       <h1 className="visually-hidden">swiper section</h1>
@@ -13,11 +19,30 @@ function MainSwiper({ mainBanner }) {
         className="swiper"
         tag="section"
         slidesPerView={1}
-        onInit={(swiper) => console.log('swiper init')}
-        onSlideChange={(swiper) => console.log('slide change')}
-        onReachEnd={() => console.log('swiper end reached')}
+        onInit={(swiper) => setCurrentNum(swiper.realIndex + 1)}
+        onSlideChange={(swiper) => {
+          setCurrentNum(swiper.realIndex + 1)
+        }}
+        onReachEnd={() => console.log('reach')}
         loop="true"
         loopedSlides={SwiperSlide.length}
+        navigation={{
+          prevEl: navigationPrevRef.current,
+          nextEl: navigationNextRef.current,
+        }}
+        onSwiper={(swiper) => {
+          setTimeout(() => {
+            // Override prevEl & nextEl now that refs are defined
+            swiper.params.navigation.prevEl = navigationPrevRef.current
+            swiper.params.navigation.nextEl = navigationNextRef.current
+
+            // Re-init navigation
+            swiper.navigation.destroy()
+            swiper.navigation.init()
+            swiper.navigation.update()
+          })
+        }}
+        modules={[Navigation]}
       >
         {mainBanner.map((data, i) => {
           return (
@@ -65,25 +90,35 @@ function MainSwiper({ mainBanner }) {
         <div className="container">
           <div className="swiper-pagination-wrapper">
             <div className="swiper-pagination-controller">
-              <span>6/7</span>
-              <div>
-                <i className="ic-previous"></i>
-                <i className="ic-pause"></i>
-                <i className="ic-next"></i>
+              <span>
+                {currentNum}/{mainBanner.length}
+              </span>
+              <div className="swiper-controller-group">
+                <span className="swiper-controller-btn" ref={navigationPrevRef}>
+                  <i className="ic-previous"></i>
+                </span>
+                <span className="swiper-controller-btn ">
+                  <i className="ic-pause"></i>
+                </span>
+                <span className="swiper-controller-btn" ref={navigationNextRef}>
+                  <i className="ic-next"></i>
+                </span>
               </div>
             </div>
             <div className="divider"></div>
-            <ul className="swiper-pagination-list">
+            <div className="swiper-pagination-list">
               {mainBanner.map((data, i) => {
                 return (
-                  <li key={`pagination-${i}`}>
-                    <span className="swiper-pagination-btn" type="button">
-                      {data.bullet}
-                    </span>
-                  </li>
+                  <span
+                    key={`pagination-${i}`}
+                    className="swiper-pagination-btn"
+                    type="button"
+                  >
+                    {data.bullet}
+                  </span>
                 )
               })}
-            </ul>
+            </div>
             <button className="swiper-pagination-dropdown" type="button">
               <i className="ic-down"></i>
             </button>
