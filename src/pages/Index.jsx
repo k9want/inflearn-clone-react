@@ -3,7 +3,7 @@ import Company from '../components/index/Company'
 import CurationCourse from '../components/index/CurationCourse'
 import FreeCourse from '../components/index/FreeCourse'
 import HashTag from '../components/index/HashTag'
-import IndexBanner from '../components/index/IndexBanner'
+import Banner2 from '../components/index/Banner2'
 import NewbieCourse from '../components/index/NewbieCourse'
 import RecentCourse from '../components/index/RecentCourse'
 import Review from '../components/index/Review'
@@ -29,7 +29,7 @@ function Index(props) {
       <CurationCourse curationCourse={mainPageDummy.result.curationCourse} />
       <RecentCourse recentCourse={mainPageDummy.result.recentCourse} />
       <Review />
-      <IndexBanner />
+      <Banner2 banner2={mainPageDummy.result.banner2} />
       <Company />
       <Service />
     </main>
