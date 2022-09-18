@@ -52,7 +52,7 @@ export default function Navbar(props) {
             </Link>
             <ul className="navbar-list lg-only">
               <li>
-                <Link to="/roadmaps">강의</Link>
+                <Link to="/courses">강의</Link>
               </li>
               <li>
                 <Link to="/roadmaps">로드맵</Link>

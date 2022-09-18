@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from '../components/common/header/Header'
 import Company from '../components/index/Company'
 import CurationCourse from '../components/index/CurationCourse'
 import FreeCourse from '../components/index/FreeCourse'
@@ -13,26 +14,33 @@ import Service from '../components/index/Service'
 import MainSwiper from '../components/index/MainSwiper'
 import useLoginModal from '../hook/useLoginModal'
 import { mainPageDummy } from '../components/index/mainPageDummy'
-
+import Footer from '../components/common/footer/Footer'
 function Index(props) {
   return (
-    <main style={useLoginModal(props.loginModal)}>
-      <MainSwiper
-        mainBanner={mainPageDummy.result.mainBanner}
-        mainBullets={mainPageDummy.result.mainBullets}
+    <>
+      <Header
+        setLoginModal={props.setLoginModal}
+        loginModal={props.loginModal}
       />
-      <Search />
-      <HashTag />
-      <FreeCourse freeCourse={mainPageDummy.result.freeCourse} />
-      <NewbieCourse newbieCourse={mainPageDummy.result.newbieCourse} />
-      <RoadMapCourse roadMapCourse={mainPageDummy.result.roadMapCourse} />
-      <CurationCourse curationCourse={mainPageDummy.result.curationCourse} />
-      <RecentCourse recentCourse={mainPageDummy.result.recentCourse} />
-      <Review />
-      <Banner2 banner2={mainPageDummy.result.banner2} />
-      <Company />
-      <Service />
-    </main>
+      <main style={useLoginModal(props.loginModal)}>
+        <MainSwiper
+          mainBanner={mainPageDummy.result.mainBanner}
+          mainBullets={mainPageDummy.result.mainBullets}
+        />
+        <Search />
+        <HashTag />
+        <FreeCourse freeCourse={mainPageDummy.result.freeCourse} />
+        <NewbieCourse newbieCourse={mainPageDummy.result.newbieCourse} />
+        <RoadMapCourse roadMapCourse={mainPageDummy.result.roadMapCourse} />
+        <CurationCourse curationCourse={mainPageDummy.result.curationCourse} />
+        <RecentCourse recentCourse={mainPageDummy.result.recentCourse} />
+        <Review />
+        <Banner2 banner2={mainPageDummy.result.banner2} />
+        <Company />
+        <Service />
+      </main>
+      <Footer loginModal={props.loginModal} />
+    </>
   )
 }
 
