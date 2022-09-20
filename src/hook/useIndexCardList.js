@@ -4,7 +4,7 @@ import 'swiper/css/bundle'
 import { useRef } from 'react'
 import { Navigation } from 'swiper'
 
-function useCardList(courseData) {
+function useIndexCardList(courseData) {
   const navigationPrevRef = useRef(null)
   const navigationNextRef = useRef(null)
   return (
@@ -180,4 +180,4 @@ function useCardList(courseData) {
   )
 }
 
-export default useCardList
+export default useIndexCardList

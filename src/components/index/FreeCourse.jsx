@@ -1,5 +1,5 @@
 import React from 'react'
-import useCardList from '../../hook/useCardList'
+import useIndexCardList from '../../hook/useIndexCardList'
 function FreeCourse({ freeCourse }) {
   return (
     <section className="free-course">
@@ -16,7 +16,7 @@ function FreeCourse({ freeCourse }) {
             </span>
           </header>
 
-          {useCardList(freeCourse)}
+          {useIndexCardList(freeCourse)}
         </div>
       </div>
     </section>

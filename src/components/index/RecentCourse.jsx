@@ -1,5 +1,5 @@
 import React from 'react'
-import useCardList from '../../hook/useCardList'
+import useIndexCardList from '../../hook/useIndexCardList'
 
 function RecentCourse({ recentCourse }) {
   return (
@@ -16,7 +16,7 @@ function RecentCourse({ recentCourse }) {
             </a>
           </header>
 
-          {useCardList(recentCourse)}
+          {useIndexCardList(recentCourse)}
         </div>
       </div>
     </section>

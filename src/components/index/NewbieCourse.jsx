@@ -1,5 +1,5 @@
 import React from 'react'
-import useCardList from '../../hook/useCardList'
+import useIndexCardList from '../../hook/useIndexCardList'
 
 function NewbieCourse({ newbieCourse }) {
   return (
@@ -15,7 +15,7 @@ function NewbieCourse({ newbieCourse }) {
             <span class="course-text">이미 검증된 쉽고 친절한 입문 강의!!</span>
           </header>
 
-          {useCardList(newbieCourse)}
+          {useIndexCardList(newbieCourse)}
         </div>
       </div>
     </section>
