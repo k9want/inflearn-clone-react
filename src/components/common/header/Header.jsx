@@ -5,7 +5,7 @@ import LoginModal from './navbar/LoginModal'
 
 function Header(props) {
   return (
-    <div>
+    <>
       <Banner loginModal={props.loginModal} />
       <Navbar
         setLoginModal={props.setLoginModal}
@@ -14,7 +14,7 @@ function Header(props) {
       {props.loginModal ? (
         <LoginModal setLoginModal={props.setLoginModal} />
       ) : null}
-    </div>
+    </>
   )
 }
 

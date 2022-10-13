@@ -187,28 +187,28 @@ export default function Footer(props) {
           </div>
 
           <div className="info-right sm-hidden">
-            <a href="https://post.naver.com/inflearn" target="_blank">
+            <a href="https://post.naver.com/inflearn" target="blank">
               <span>N</span>
             </a>
-            <a href="https://blog.naver.com/inflearn" target="_blank">
+            <a href="https://blog.naver.com/inflearn" target="blank">
               <span>B</span>
             </a>
             <a
               href="https://www.instagram.com/inflearn__official/"
-              target="_blank"
+              target="blank"
             >
               <i className="ic-instagram"></i>
             </a>
             <a
               href="https://www.youtube.com/channel/UC0Y0T9JpgIBbyGDjvy9PbOg"
-              target="_blank"
+              target="blank"
             >
               <i className="ic-youtube"></i>
             </a>
-            <a href="https://www.facebook.com/inflearn" target="_blank">
+            <a href="https://www.facebook.com/inflearn" target="blank">
               <i className="ic-facebook"></i>
             </a>
-            <a href="https://twitter.com/inflearn" target="_blank">
+            <a href="https://twitter.com/inflearn" target="blank">
               <i className="ic-twitter"></i>
             </a>
           </div>

@@ -58,7 +58,7 @@ export default function Navbar(props) {
                 <Link to="/roadmaps">로드맵</Link>
               </li>
               <li>
-                <Link to="/">멘토링</Link>
+                <Link to="/mentors">멘토링</Link>
               </li>
               <li>
                 <Link to="/">커뮤니티</Link>
