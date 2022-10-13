@@ -131,7 +131,7 @@ function RoadmapsPanelLeft() {
         </div>
       </nav>
 
-      <a href="/" className="filter-reset">
+      <a href="/roadmaps" className="filter-reset">
         <i className="ic-sync"></i>
         &nbsp;&nbsp; 필터 초기화
       </a>
