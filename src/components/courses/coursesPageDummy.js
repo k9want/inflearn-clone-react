@@ -392,7 +392,7 @@ export const coursesPageDummy = {
         del: '',
         price: '무료',
         students: '',
-        isNew: true,
+        isNew: false,
         isUpdate: false,
         isDiscount: false,
         description:
