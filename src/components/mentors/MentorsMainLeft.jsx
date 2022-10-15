@@ -5,7 +5,7 @@ import selectDownSrc from '../../assets/images/index/select-down.png'
 
 function MentorsMainLeft() {
   const [isCheck, setIsCheck] = useState([
-    true,
+    false,
     false,
     false,
     false,
@@ -122,6 +122,7 @@ const Wrapper = styled.div`
   position: sticky;
   top: 84px;
   text-align: left;
+  height: 100%;
 `
 
 const InputWrapper = styled.div`
