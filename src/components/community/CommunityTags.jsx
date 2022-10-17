@@ -52,7 +52,7 @@ const CommunityTagsList = styled.ul`
   flex-direction: row;
 `
 
-const CommunityTagsItem = styled.li`
+export const CommunityTagsItem = styled.li`
   margin: 0 4px 10px 0;
 
   &:hover {

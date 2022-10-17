@@ -1,0 +1,202 @@
+import React from 'react'
+import styled from 'styled-components'
+import { CommunityTagsItem } from './CommunityTags'
+
+function CommunityArticles({ data }) {
+  return (
+    <CommunityArticlesList>
+      {data.result.articles.map((article) => {
+        return (
+          <CommunityArticlesItem key={article.id}>
+            <a href={window.location.href}>
+              <CommunityArticlesBox>
+                {/* info */}
+                <CommunityArticlesInfoBox>
+                  <CommunityArticlesTitle>
+                    {article.title}
+                  </CommunityArticlesTitle>
+
+                  <CommunityArticlesDescription>
+                    {article.description}
+                  </CommunityArticlesDescription>
+                  <CommunityArticlesTagList>
+                    {article.tags
+                      ? article.tags.map((tag, i) => {
+                          return (
+                            <CommunityTagsItem
+                              style={{ marginBottom: '5px' }}
+                              key={i}
+                            >
+                              <button>
+                                <span>#&nbsp;</span>
+                                <span>{tag}</span>
+                              </button>
+                            </CommunityTagsItem>
+                          )
+                        })
+                      : null}
+                  </CommunityArticlesTagList>
+                  <CommunityArticlesInfoFooter>
+                    <strong>{article.name}</strong>
+                    <span>&nbsp;·&nbsp;</span>
+                    <strong style={{ flexShrink: 0 }}>
+                      {article.createdAt}
+                    </strong>
+                    <span>&nbsp;·&nbsp;</span>
+                    <strong>{article.courseTitle}</strong>
+                  </CommunityArticlesInfoFooter>
+                </CommunityArticlesInfoBox>
+                {/* additional */}
+                <CommunityArticlesAdditionalInfoBox>
+                  {/* comment */}
+                  <CommunityArticlesCommentBox>
+                    <CommunityArticlesCommentCount>
+                      {article.commentCount}
+                    </CommunityArticlesCommentCount>
+                    <span>답변</span>
+                  </CommunityArticlesCommentBox>
+                  <CommunityArticlesLikeBox>
+                    <svg
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="16"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill="#616568"
+                        d="M9.333 13.605c-.328.205-.602.365-.795.473-.102.057-.205.113-.308.168h-.002c-.143.074-.313.074-.456 0-.105-.054-.208-.11-.31-.168-.193-.108-.467-.268-.795-.473-.655-.41-1.53-1.007-2.408-1.754C2.534 10.382.667 8.22.667 5.676c0-2.308 1.886-4.01 3.824-4.01 1.529 0 2.763.818 3.509 2.07.746-1.252 1.98-2.07 3.509-2.07 1.938 0 3.824 1.702 3.824 4.01 0 2.545-1.867 4.706-3.592 6.175-.878.747-1.753 1.344-2.408 1.754z"
+                      ></path>
+                    </svg>
+                    {article.likeCount}
+                  </CommunityArticlesLikeBox>
+                </CommunityArticlesAdditionalInfoBox>
+              </CommunityArticlesBox>
+            </a>
+          </CommunityArticlesItem>
+        )
+      })}
+    </CommunityArticlesList>
+  )
+}
+
+const CommunityArticlesList = styled.ul``
+
+const CommunityArticlesItem = styled.li``
+
+const CommunityArticlesBox = styled.div`
+  display: flex;
+  padding: 20px 16px;
+  border-bottom: 1px solid #dee2e6;
+`
+
+const CommunityArticlesInfoBox = styled.div`
+  flex: 1 1 590px;
+  width: 0;
+  max-width: 590px;
+`
+
+const CommunityArticlesTitle = styled.h3`
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  white-space: nowrap;
+  white-space: normal;
+  line-height: 1.5;
+  text-align: left;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-right: 9px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1b1c1d;
+`
+
+const CommunityArticlesDescription = styled.p`
+  margin-bottom: 12px;
+  max-height: 44px;
+  color: #616568;
+  overflow: hidden;
+  font-size: 15px;
+`
+
+const CommunityArticlesTagList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+`
+
+const CommunityArticlesInfoFooter = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #858a8d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: nowrap;
+  min-width: 0;
+
+  strong {
+    font-weight: 400;
+    flex-shrink: 1;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+`
+
+const CommunityArticlesAdditionalInfoBox = styled.div`
+  flex: 1 1 146px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  max-width: 146px;
+`
+
+const CommunityArticlesCommentBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  border: 1px solid #dee2e6;
+
+  span {
+    font-size: 12px;
+    font-weight: 500;
+    color: #616568;
+  }
+`
+
+const CommunityArticlesCommentCount = styled.strong`
+  font-size: 18px;
+  font-weight: 500;
+  color: #1b1c1d;
+`
+const CommunityArticlesLikeBox = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  height: 40px;
+  line-height: 1.43;
+  font-size: 14px;
+  letter-spacing: -0.3px;
+
+  svg {
+    margin-right: 4px;
+  }
+`
+
+export default CommunityArticles
