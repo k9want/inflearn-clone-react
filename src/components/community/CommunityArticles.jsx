@@ -42,8 +42,12 @@ function CommunityArticles({ data }) {
                     <strong style={{ flexShrink: 0 }}>
                       {article.createdAt}
                     </strong>
-                    <span>&nbsp;·&nbsp;</span>
-                    <strong>{article.courseTitle}</strong>
+                    {article.courseTitle ? (
+                      <>
+                        <span>&nbsp;·&nbsp;</span>
+                        <strong>{article.courseTitle}</strong>
+                      </>
+                    ) : null}
                   </CommunityArticlesInfoFooter>
                 </CommunityArticlesInfoBox>
                 {/* additional */}
