@@ -5,6 +5,7 @@ import RoadMaps from './pages/RoadMaps'
 import Index from './pages/Index'
 import SignUp from './pages/SignUp'
 import Mentors from './pages/Mentors'
+import CommunityQuestions from './pages/CommunityQuestions'
 
 function App() {
   const [loginModal, setLoginModal] = useState(false)
@@ -33,6 +34,15 @@ function App() {
           path="/mentors"
           element={
             <Mentors setLoginModal={setLoginModal} loginModal={loginModal} />
+          }
+        />
+        <Route
+          path="/community/questions"
+          element={
+            <CommunityQuestions
+              setLoginModal={setLoginModal}
+              loginModal={loginModal}
+            />
           }
         />
         <Route

@@ -4,84 +4,90 @@ import { CommunityTagsItem } from './CommunityTags'
 
 function CommunityArticles({ data }) {
   return (
-    <CommunityArticlesList>
-      {data.result.articles.map((article) => {
-        return (
-          <CommunityArticlesItem key={article.id}>
-            <a href={window.location.href}>
-              <CommunityArticlesBox>
-                {/* info */}
-                <CommunityArticlesInfoBox>
-                  <CommunityArticlesTitle>
-                    {article.title}
-                  </CommunityArticlesTitle>
+    <CommunityArticlesLayout>
+      <CommunityArticlesList>
+        {data.result.articles.map((article) => {
+          return (
+            <CommunityArticlesItem key={article.id}>
+              <a href={window.location.href}>
+                <CommunityArticlesBox>
+                  {/* info */}
+                  <CommunityArticlesInfoBox>
+                    <CommunityArticlesTitle>
+                      {article.title}
+                    </CommunityArticlesTitle>
 
-                  <CommunityArticlesDescription>
-                    {article.description}
-                  </CommunityArticlesDescription>
-                  <CommunityArticlesTagList>
-                    {article.tags
-                      ? article.tags.map((tag, i) => {
-                          return (
-                            <CommunityTagsItem
-                              style={{ marginBottom: '5px' }}
-                              key={i}
-                            >
-                              <button>
-                                <span>#&nbsp;</span>
-                                <span>{tag}</span>
-                              </button>
-                            </CommunityTagsItem>
-                          )
-                        })
-                      : null}
-                  </CommunityArticlesTagList>
-                  <CommunityArticlesInfoFooter>
-                    <strong>{article.name}</strong>
-                    <span>&nbsp;·&nbsp;</span>
-                    <strong style={{ flexShrink: 0 }}>
-                      {article.createdAt}
-                    </strong>
-                    {article.courseTitle ? (
-                      <>
-                        <span>&nbsp;·&nbsp;</span>
-                        <strong>{article.courseTitle}</strong>
-                      </>
-                    ) : null}
-                  </CommunityArticlesInfoFooter>
-                </CommunityArticlesInfoBox>
-                {/* additional */}
-                <CommunityArticlesAdditionalInfoBox>
-                  {/* comment */}
-                  <CommunityArticlesCommentBox>
-                    <CommunityArticlesCommentCount>
-                      {article.commentCount}
-                    </CommunityArticlesCommentCount>
-                    <span>답변</span>
-                  </CommunityArticlesCommentBox>
-                  <CommunityArticlesLikeBox>
-                    <svg
-                      width="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="16"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill="#616568"
-                        d="M9.333 13.605c-.328.205-.602.365-.795.473-.102.057-.205.113-.308.168h-.002c-.143.074-.313.074-.456 0-.105-.054-.208-.11-.31-.168-.193-.108-.467-.268-.795-.473-.655-.41-1.53-1.007-2.408-1.754C2.534 10.382.667 8.22.667 5.676c0-2.308 1.886-4.01 3.824-4.01 1.529 0 2.763.818 3.509 2.07.746-1.252 1.98-2.07 3.509-2.07 1.938 0 3.824 1.702 3.824 4.01 0 2.545-1.867 4.706-3.592 6.175-.878.747-1.753 1.344-2.408 1.754z"
-                      ></path>
-                    </svg>
-                    {article.likeCount}
-                  </CommunityArticlesLikeBox>
-                </CommunityArticlesAdditionalInfoBox>
-              </CommunityArticlesBox>
-            </a>
-          </CommunityArticlesItem>
-        )
-      })}
-    </CommunityArticlesList>
+                    <CommunityArticlesDescription>
+                      {article.description}
+                    </CommunityArticlesDescription>
+                    <CommunityArticlesTagList>
+                      {article.tags
+                        ? article.tags.map((tag, i) => {
+                            return (
+                              <CommunityTagsItem
+                                style={{ marginBottom: '5px' }}
+                                key={i}
+                              >
+                                <button>
+                                  <span>#&nbsp;</span>
+                                  <span>{tag}</span>
+                                </button>
+                              </CommunityTagsItem>
+                            )
+                          })
+                        : null}
+                    </CommunityArticlesTagList>
+                    <CommunityArticlesInfoFooter>
+                      <strong>{article.name}</strong>
+                      <span>&nbsp;·&nbsp;</span>
+                      <strong style={{ flexShrink: 0 }}>
+                        {article.createdAt}
+                      </strong>
+                      {article.courseTitle ? (
+                        <>
+                          <span>&nbsp;·&nbsp;</span>
+                          <strong>{article.courseTitle}</strong>
+                        </>
+                      ) : null}
+                    </CommunityArticlesInfoFooter>
+                  </CommunityArticlesInfoBox>
+                  {/* additional */}
+                  <CommunityArticlesAdditionalInfoBox>
+                    {/* comment */}
+                    <CommunityArticlesCommentBox>
+                      <CommunityArticlesCommentCount>
+                        {article.commentCount}
+                      </CommunityArticlesCommentCount>
+                      <span>답변</span>
+                    </CommunityArticlesCommentBox>
+                    <CommunityArticlesLikeBox>
+                      <svg
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="16"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill="#616568"
+                          d="M9.333 13.605c-.328.205-.602.365-.795.473-.102.057-.205.113-.308.168h-.002c-.143.074-.313.074-.456 0-.105-.054-.208-.11-.31-.168-.193-.108-.467-.268-.795-.473-.655-.41-1.53-1.007-2.408-1.754C2.534 10.382.667 8.22.667 5.676c0-2.308 1.886-4.01 3.824-4.01 1.529 0 2.763.818 3.509 2.07.746-1.252 1.98-2.07 3.509-2.07 1.938 0 3.824 1.702 3.824 4.01 0 2.545-1.867 4.706-3.592 6.175-.878.747-1.753 1.344-2.408 1.754z"
+                        ></path>
+                      </svg>
+                      {article.likeCount}
+                    </CommunityArticlesLikeBox>
+                  </CommunityArticlesAdditionalInfoBox>
+                </CommunityArticlesBox>
+              </a>
+            </CommunityArticlesItem>
+          )
+        })}
+      </CommunityArticlesList>
+    </CommunityArticlesLayout>
   )
 }
+
+const CommunityArticlesLayout = styled.div`
+  margin-bottom: 40px;
+`
 
 const CommunityArticlesList = styled.ul``
 
