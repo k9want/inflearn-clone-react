@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { CommunityTagsItem } from './CommunityTags'
 
-function CommunityArticles({ data }) {
+function CommunityArticles({ data, now }) {
   return (
     <CommunityArticlesLayout>
       <CommunityArticlesList>
@@ -58,7 +58,7 @@ function CommunityArticles({ data }) {
                       <CommunityArticlesCommentCount>
                         {article.commentCount}
                       </CommunityArticlesCommentCount>
-                      <span>답변</span>
+                      <span>{now > 0 ? '댓글' : '답변'}</span>
                     </CommunityArticlesCommentBox>
                     <CommunityArticlesLikeBox>
                       <svg
