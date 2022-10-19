@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function CommunityBanner({ data }) {
+function CommunityBanner({ banner }) {
   return (
     <CommunityWrapper>
       <div>
-        <h1>{data.title}</h1>
-        <p>{data.description}</p>
+        <h1>{banner.title}</h1>
+        <p>{banner.description}</p>
       </div>
     </CommunityWrapper>
   )

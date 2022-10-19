@@ -7,6 +7,10 @@ import CommunityMain from '../components/community/CommunityMain'
 import useLoginModal from '../hook/useLoginModal'
 
 function CommunityQuestions(props) {
+  const banner = {
+    title: '묻고 답해요',
+    description: '97만명의 커뮤니티!! 함께 토론해봐요.',
+  }
   const filter = ['전체', '미해결', '해결됨']
   const formPlaceholder = '궁금한 질문을 검색해보세요!'
   const order = ['최신순', '정확도순', '답변많은순', '좋아요순']
@@ -20,7 +24,7 @@ function CommunityQuestions(props) {
         loginModal={props.loginModal}
       />
       <div style={useLoginModal(props.loginModal)}>
-        <CommunityBanner data={communityQustionDummy.result.banner} />
+        <CommunityBanner banner={banner} />
         <CommunityMain
           navNow={navNow}
           formPlaceholder={formPlaceholder}

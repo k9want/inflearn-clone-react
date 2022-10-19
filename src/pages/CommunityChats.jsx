@@ -7,6 +7,10 @@ import CommunityMain from '../components/community/CommunityMain'
 import useLoginModal from '../hook/useLoginModal'
 
 function CommunityChats(props) {
+  const banner = {
+    title: '이야기를 나눠요',
+    description: '97만명의 커뮤니티!! 함께 토론해봐요.',
+  }
   const filter = []
   const formPlaceholder = '대화 내용을 검색해보세요!'
   const order = ['최신순', '정확도순', '댓글많은순', '좋아요순']
@@ -20,7 +24,7 @@ function CommunityChats(props) {
         loginModal={props.loginModal}
       />
       <div style={useLoginModal(props.loginModal)}>
-        <CommunityBanner data={communityChatsDummy.result.banner} />
+        <CommunityBanner banner={banner} />
         <CommunityMain
           navNow={navNow}
           formPlaceholder={formPlaceholder}
