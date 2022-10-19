@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { CommunityTagsItem } from './CommunityTags'
 
 function CommunityArticles({ data, now }) {
@@ -13,9 +13,18 @@ function CommunityArticles({ data, now }) {
                 <CommunityArticlesBox>
                   {/* info */}
                   <CommunityArticlesInfoBox>
-                    <CommunityArticlesTitle>
-                      {article.title}
-                    </CommunityArticlesTitle>
+                    <CommunityArticlesTitleBox>
+                      {now === 2 ? (
+                        <CommunityArticlesTitleSpan
+                          recruited={article.recruited}
+                        >
+                          {article.recruited ? '모집중' : '모집완료'}
+                        </CommunityArticlesTitleSpan>
+                      ) : null}
+                      <CommunityArticlesTitle>
+                        {article.title}
+                      </CommunityArticlesTitle>
+                    </CommunityArticlesTitleBox>
 
                     <CommunityArticlesDescription>
                       {article.description}
@@ -105,8 +114,33 @@ const CommunityArticlesInfoBox = styled.div`
   max-width: 590px;
 `
 
-const CommunityArticlesTitle = styled.h3`
+const CommunityArticlesTitleBox = styled.div`
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
+`
+const CommunityArticlesTitleSpan = styled.span`
+  background-color: #adb5bd;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: -0.3px;
+  height: 22px;
+  padding: 0 6px;
+  margin-right: 8px;
+  color: #fff;
+  font-weight: 700;
+  flex-shrink: 0;
+  ${(props) =>
+    props.recruited &&
+    css`
+      background-color: #00c471;
+    `}
+`
+
+const CommunityArticlesTitle = styled.h3`
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;

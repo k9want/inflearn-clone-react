@@ -40,7 +40,7 @@ function CommunityNav({ now }) {
               </Link>
             </li>
             <li>
-              <Link to="/community/questions">
+              <Link to="/community/studies">
                 <Span isNow={isNow[2]}>스터디</Span>
               </Link>
             </li>

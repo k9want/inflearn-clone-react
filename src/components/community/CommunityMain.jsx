@@ -18,7 +18,7 @@ function CommunityMain({ navNow, data, filter, formPlaceholder, order, page }) {
           <CommunityFilter filter={filter} />
         ) : null}
         <CommunityForm formPlaceholder={formPlaceholder} />
-        <CommunityOrder order={order} />
+        <CommunityOrder order={order} now={navNow} />
         <CommunityArticles data={data} now={navNow} />
         <CommunityPagination page={page} />
       </CommunityMainSection>
