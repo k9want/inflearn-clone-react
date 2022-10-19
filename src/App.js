@@ -6,6 +6,7 @@ import Index from './pages/Index'
 import SignUp from './pages/SignUp'
 import Mentors from './pages/Mentors'
 import CommunityQuestions from './pages/CommunityQuestions'
+import CommunityChats from './pages/CommunityChats'
 
 function App() {
   const [loginModal, setLoginModal] = useState(false)
@@ -40,6 +41,15 @@ function App() {
           path="/community/questions"
           element={
             <CommunityQuestions
+              setLoginModal={setLoginModal}
+              loginModal={loginModal}
+            />
+          }
+        />
+        <Route
+          path="/community/chats"
+          element={
+            <CommunityChats
               setLoginModal={setLoginModal}
               loginModal={loginModal}
             />
