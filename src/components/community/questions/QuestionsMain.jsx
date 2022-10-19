@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react'
 import styled from 'styled-components'
 import CommunityFilter from '../CommunityFilter'
 import CommunityForm from '../CommunityForm'
@@ -7,13 +6,11 @@ import CommunityArticles from '../CommunityArticles'
 import CommunityNav from '../CommunityNav'
 import CommunityOrder from '../CommunityOrder'
 import CommunityTags from '../CommunityTags'
-import { communityQustionDummy } from './communityQustionDummy'
 import CommunityPagination from '../CommunityPagination'
 
-function QuestionsMain() {
+function QuestionsMain({ data }) {
   const filter = ['전체', '미해결', '해결됨']
   const order = ['최신순', '정확도순', '답변많은순', '좋아요순']
-
   const page = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
   return (
@@ -24,10 +21,10 @@ function QuestionsMain() {
         <CommunityFilter filter={filter} />
         <CommunityForm />
         <CommunityOrder order={order} />
-        <CommunityArticles data={communityQustionDummy} />
+        <CommunityArticles data={data} />
         <CommunityPagination page={page} />
       </CommunityMain>
-      <CommunityTags data={communityQustionDummy} />
+      <CommunityTags data={data} />
     </CommunityLayout>
   )
 }

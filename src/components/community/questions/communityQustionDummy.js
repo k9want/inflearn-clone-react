@@ -1,5 +1,9 @@
 export const communityQustionDummy = {
   result: {
+    banner: {
+      title: '묻고 답해요',
+      description: '97만명의 커뮤니티!! 함께 토론해봐요.',
+    },
     tags: [
       '오류',
       '질문',

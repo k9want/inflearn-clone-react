@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function CommunityBanner() {
+function CommunityBanner({ data }) {
   return (
     <CommunityWrapper>
       <div>
-        <h1>묻고 답해요</h1>
-        <p>97만명의 커뮤니티!! 함께 토론해봐요.</p>
+        <h1>{data.title}</h1>
+        <p>{data.description}</p>
       </div>
     </CommunityWrapper>
   )
