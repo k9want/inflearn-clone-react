@@ -12,7 +12,7 @@ function CommunityBanner({ banner }) {
   )
 }
 
-const CommunityWrapper = styled.div`
+export const CommunityWrapper = styled.div`
   padding: 24px 0;
   width: 100%;
   background-color: #333b3d;
