@@ -9,6 +9,7 @@ import CommunityQuestions from './pages/CommunityQuestions'
 import CommunityChats from './pages/CommunityChats'
 import CommunityStudies from './pages/CommunityStudies'
 import CommunityReviews from './pages/CommunityReviews'
+import CommunityMentoringsReviews from './pages/CommunityMentoringsReviews'
 
 function App() {
   const [loginModal, setLoginModal] = useState(false)
@@ -70,6 +71,15 @@ function App() {
           path="/community/reviews"
           element={
             <CommunityReviews
+              setLoginModal={setLoginModal}
+              loginModal={loginModal}
+            />
+          }
+        />
+        <Route
+          path="/community/mentorings-reviews"
+          element={
+            <CommunityMentoringsReviews
               setLoginModal={setLoginModal}
               loginModal={loginModal}
             />

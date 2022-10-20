@@ -9,7 +9,7 @@ export const communityReviewsDummy = {
           '덕분에 쿠버네티스에 대해 좀 더 잘 알게 되었고 재밌게 공부할 수 있었습니다. 감사합니다. ^o^',
         likeCount: 1,
         rating: 5,
-        name: '',
+        name: 'han__story',
         createdAt: '1시간 전',
         courseTitle: '그림으로 배우는 쿠버네티스(v1.22-v1.24)',
       },

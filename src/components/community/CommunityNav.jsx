@@ -60,7 +60,7 @@ function CommunityNav({ now }) {
               </Link>
             </li>
             <li>
-              <Link to="/community/questions">
+              <Link to="/community/mentorings-reviews">
                 <Span isNow={isNow[5]}>멘토링 후기 </Span>
               </Link>
             </li>

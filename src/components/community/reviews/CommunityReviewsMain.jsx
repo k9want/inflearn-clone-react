@@ -65,24 +65,44 @@ function CommunityReviewsMain({ navNow, data, page }) {
                     {createRating(article.rating)}
 
                     <p>{article.description}</p>
-                    <CommunityReviewsMainItemMetasBox>
-                      <span>좋아요: </span>
-                      <i className="ic-heart"></i>
-                      <span> {article.likeCount}</span>
-                      <span> 글쓴이: </span>
-                      <span>{article.name}</span>
-                      <span> </span>
-                      <span>{article.createdAt}</span>
-                      <span> 강의명: </span>
-                      <span>{article.courseTitle}</span>
-                    </CommunityReviewsMainItemMetasBox>
+                    {navNow === 4 ? (
+                      <CommunityReviewsMainItemMetasBox>
+                        <span>좋아요: </span>
+                        <i className="ic-heart"></i>
+                        <span> {article.likeCount}</span>
+                        <span> 글쓴이: </span>
+                        <span>{article.name}</span>
+                        <span> </span>
+                        <span>{article.createdAt}</span>
+                        <span> 강의명: </span>
+                        <span>{article.courseTitle}</span>
+                      </CommunityReviewsMainItemMetasBox>
+                    ) : null}
+                    {navNow === 5 ? (
+                      <CommunityReviewsMainItemMetasBox>
+                        <span>멘토링: </span>
+                        <span> {article.courseTitle}</span>
+                        <span> | </span>
+                        <span>{article.name}</span>
+                      </CommunityReviewsMainItemMetasBox>
+                    ) : null}
                   </CommunityReviewsMainItemInfoBox>
-                  <CommunityReviewsMainItemImgBox>
-                    <img
-                      src={article.imgUrl}
-                      alt={`${article.courseTitle} + 이미지`}
-                    />
-                  </CommunityReviewsMainItemImgBox>
+                  {navNow === 4 ? (
+                    <CommunityReviewsMainItemImgBox>
+                      <img
+                        src={article.imgUrl}
+                        alt={`${article.courseTitle} + 이미지`}
+                      />
+                    </CommunityReviewsMainItemImgBox>
+                  ) : null}
+                  {navNow === 5 ? (
+                    <CommunityMentoringsReviewsMainItemImgBox>
+                      <img
+                        src={article.imgUrl}
+                        alt={`${article.courseTitle} + 이미지`}
+                      />
+                    </CommunityMentoringsReviewsMainItemImgBox>
+                  ) : null}
                 </CommunityReviewsMainItem>
               )
             })}
@@ -90,7 +110,10 @@ function CommunityReviewsMain({ navNow, data, page }) {
           <CommunityPagination page={page} />
         </CommunityReviewsMainBox>
         <CommunityReviewsAside>
-          <h5>최근 Hot 한 강의 🔥</h5>
+          <h5>
+            {navNow === 4 ? '최근 Hot 한 강의 🔥' : null}
+            {navNow === 5 ? '최근 진행한 멘토링 🔥' : null}
+          </h5>
           <ul>
             {data.result.hotCourses.map((hotCourse) => {
               return (
@@ -163,6 +186,11 @@ const CommunityReviewsMainItemInfoBox = styled.div`
     height: 1.5em;
     color: #fdcc11;
   }
+
+  p {
+    white-space: pre-wrap;
+    word-break: keep-all;
+  }
 `
 
 const CommunityReviewsMainItemMetasBox = styled.div`
@@ -187,6 +215,23 @@ const CommunityReviewsMainItemImgBox = styled.div`
     max-width: 120px;
     max-height: 78.125px;
     text-align: center;
+  }
+`
+
+const CommunityMentoringsReviewsMainItemImgBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0.75rem auto 1rem;
+  height: 100px;
+  text-align: center;
+  img {
+    display: block;
+    width: 78.125px;
+    height: 78.125px;
+    object-fit: cover;
+    border: 1px solid #dee2e6;
+    border-radius: 50%;
   }
 `
 
