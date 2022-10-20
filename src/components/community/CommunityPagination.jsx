@@ -41,7 +41,9 @@ function CommunityPagination({ page }) {
   return (
     <CommunityPaginationLayout>
       {!pageButton[0] ? (
-        <CommunityPaginationButton>이전 페이지</CommunityPaginationButton>
+        <CommunityPaginationButton onClick={() => onClickBeforeButton()}>
+          이전 페이지
+        </CommunityPaginationButton>
       ) : (
         <button></button>
       )}
@@ -63,7 +65,9 @@ function CommunityPagination({ page }) {
         </CommunityPaginationList>
       </CommunityPaginationNav>
       {!pageButton[page.length - 1] ? (
-        <CommunityPaginationButton>다음 페이지</CommunityPaginationButton>
+        <CommunityPaginationButton onClick={() => onClickNextButton()}>
+          다음 페이지
+        </CommunityPaginationButton>
       ) : (
         <button></button>
       )}
