@@ -64,7 +64,7 @@ export default function Navbar(props) {
                 <Link to="/community/questions">커뮤니티</Link>
               </li>
               <li>
-                <Link to="/">인프런</Link>
+                <Link to="/community/reviews">인프런</Link>
               </li>
             </ul>
           </div>

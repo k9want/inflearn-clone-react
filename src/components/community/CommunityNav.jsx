@@ -55,7 +55,7 @@ function CommunityNav({ now }) {
           <h6>후기</h6>
           <ul>
             <li>
-              <Link to="/community/questions">
+              <Link to="/community/reviews">
                 <Span isNow={isNow[4]}>수강평</Span>
               </Link>
             </li>
@@ -100,6 +100,9 @@ const Wrapper = styled.nav`
   flex: 1 0 172px;
   max-width: 172px;
   margin-right: 24px;
+  @media screen and (max-width: 1024px) {
+    display: none !important;
+  }
 `
 
 const CommunityListWrapper = styled.ul`

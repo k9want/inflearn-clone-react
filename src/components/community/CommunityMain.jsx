@@ -27,7 +27,7 @@ function CommunityMain({ navNow, data, filter, formPlaceholder, order, page }) {
   )
 }
 
-const CommunityLayout = styled.div`
+export const CommunityLayout = styled.div`
   display: flex;
   flex-direction: row;
   margin: 0 auto;
