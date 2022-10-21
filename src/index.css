@@ -1066,8 +1066,9 @@ ol {
 }
 .card-back:hover {
   display: block;
+  cursor: pointer;
 }
-.card-back a {
+.card-back .card-back-info {
   position: absolute;
   padding: 12px;
   width: 231.19px;
@@ -4035,7 +4036,7 @@ footer .wrapper .info {
 .courses-card-list .card .card-front:hover .card-back {
   display: block;
 }
-.courses-card-list .card .card-front:hover .card-back a {
+.courses-card-list .card .card-front:hover .card-back .card-back-info {
   height: inherit;
 }
 .courses-card-list .card .card-img {
@@ -4067,13 +4068,13 @@ footer .wrapper .info {
   top: 0;
   width: 100%;
 }
-.courses-card-list .card .card-back a {
+.courses-card-list .card .card-back .card-back-info {
   width: 100%;
 }
-.courses-card-list .card .card-back a .lecture-title {
+.courses-card-list .card .card-back .card-back-info .lecture-title {
   margin-bottom: 4px;
 }
-.courses-card-list .card .card-back a .lecture-description {
+.courses-card-list .card .card-back .card-back-info .lecture-description {
   color: #fff;
   line-height: 1.6em;
   font-size: 0.85rem;
