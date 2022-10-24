@@ -2,21 +2,21 @@ import React from 'react'
 
 function CurationCourse({ curationCourse }) {
   return (
-    <section class="curation-course">
-      <div class="container">
-        <header class="course-header">
+    <section className="curation-course">
+      <div className="container">
+        <header className="course-header">
           <a href="/">
-            <h1 class="course-title">
+            <h1 className="course-title">
               읽어보기
-              <i class="ic-next"></i>
+              <i className="ic-next"></i>
             </h1>
           </a>
         </header>
 
-        <div class="card-list">
+        <div className="card-list">
           {curationCourse.map((data, i) => {
             return (
-              <div class="curation-card" key={`curationCourse-${i}`}>
+              <div className="curation-card" key={`curationCourse-${i}`}>
                 <a href="/">
                   <div>
                     <img
@@ -24,7 +24,7 @@ function CurationCourse({ curationCourse }) {
                       alt={data.title}
                     />
                   </div>
-                  <div class="card-content">
+                  <div className="card-content">
                     <h3>{data.title}</h3>
                     <p>{data.description}</p>
                   </div>

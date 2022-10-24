@@ -9,10 +9,10 @@ function CoursesCard({ data }) {
   }
 
   return (
-    <div class="col-sm-2 roadmap-md-4 col-md-4 roadmap-lg-3">
-      <div class="card">
-        <div class="card-front">
-          <div class="card-img">
+    <div className="col-sm-2 roadmap-md-4 col-md-4 roadmap-lg-3">
+      <div className="card">
+        <div className="card-front">
+          <div className="card-img">
             <img
               src={require('../../assets/images/courses/' + data.imgUrl)}
               alt={data.lectureTitle}
@@ -20,7 +20,7 @@ function CoursesCard({ data }) {
             {data.badge ? (
               <div className="course-badge">
                 <span className="course-badge-icon">
-                  <i class="ic-badge-discount"></i>
+                  <i className="ic-badge-discount"></i>
                 </span>
                 {data.badge}% 할인
                 {data.badgeDay ? (
@@ -30,21 +30,21 @@ function CoursesCard({ data }) {
             ) : null}
           </div>
 
-          <div class="card-content">
-            <div class="lecture-title">{data.lectureTitle}</div>
-            <div class="instructor">{data.instructor}</div>
+          <div className="card-content">
+            <div className="lecture-title">{data.lectureTitle}</div>
+            <div className="instructor">{data.instructor}</div>
             {data.reviewCnt ? (
               <div className="review">
                 <div className="review-avg">
                   {[...Array(data.starCnt)].map((n, index) => {
-                    return <i className="ic-star-filled"></i>
+                    return <i className="ic-star-filled" key={index}></i>
                   })}
                 </div>
                 <span className="review-cnt">({data.reviewCnt})</span>
               </div>
             ) : null}
             <div className="price">
-              {data.del ? <span class="del">{data.del}</span> : null}
+              {data.del ? <span className="del">{data.del}</span> : null}
               <span>{data.price}</span>
             </div>
             <div className="tags">
@@ -61,18 +61,18 @@ function CoursesCard({ data }) {
             </div>
           </div>
 
-          <div class="card-back" onClick={() => onClickCardBack()}>
+          <div className="card-back" onClick={() => onClickCardBack()}>
             <div className="card-back-info">
-              <p class="lecture-title">{data.lectureTitle}</p>
-              <p class="lecture-description">{data.description}</p>
-              <div class="lecture-metas">
-                <div class="level">
+              <p className="lecture-title">{data.lectureTitle}</p>
+              <p className="lecture-description">{data.description}</p>
+              <div className="lecture-metas">
+                <div className="level">
                   <svg
                     width="16"
                     aria-hidden="true"
                     data-prefix="fal"
                     data-icon="signal-alt"
-                    class="svg-inline--fa fa-signal-alt fa-w-20"
+                    className="svg-inline--fa fa-signal-alt fa-w-20"
                     role="img"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 640 512"
@@ -85,14 +85,14 @@ function CoursesCard({ data }) {
                   <span>{data.level}</span>
                 </div>
 
-                <div class="category">
+                <div className="category">
                   <svg
                     width="16"
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="fal"
                     data-icon="folder-tree"
-                    class="svg-inline--fa fa-folder-tree fa-w-18"
+                    className="svg-inline--fa fa-folder-tree fa-w-18"
                     role="img"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 512"
@@ -105,14 +105,14 @@ function CoursesCard({ data }) {
                   <span>{data.category}</span>
                 </div>
 
-                <div class="skill">
+                <div className="skill">
                   <svg
                     width="16"
                     aria-hidden="true"
                     focusable="false"
                     data-prefix="far"
                     data-icon="cubes"
-                    class="svg-inline--fa fa-cubes fa-w-16"
+                    className="svg-inline--fa fa-cubes fa-w-16"
                     role="img"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
@@ -126,9 +126,9 @@ function CoursesCard({ data }) {
                 </div>
               </div>
             </div>
-            <div class="lecture-active">
-              <i class="ic-heart"></i>
-              <i class="ic-plus"></i>
+            <div className="lecture-active">
+              <i className="ic-heart"></i>
+              <i className="ic-plus"></i>
             </div>
           </div>
         </div>

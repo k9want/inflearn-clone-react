@@ -12,7 +12,7 @@ function CourseDetailBanner({ params }) {
     const arrRating = []
     for (let i = 0; i < rating; i++) {
       arrRating.push(
-        <span>
+        <span key={i}>
           <svg
             width="100%"
             height="100%"
@@ -31,7 +31,7 @@ function CourseDetailBanner({ params }) {
     }
     for (let i = rating; i < 5; i++) {
       arrRating.push(
-        <span>
+        <span key={i}>
           <svg
             width="100%"
             height="100%"

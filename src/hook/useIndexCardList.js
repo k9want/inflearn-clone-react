@@ -45,7 +45,7 @@ function useIndexCardList(courseData) {
                       {data.badge ? (
                         <div className="course-badge">
                           <span className="course-badge-icon">
-                            <i class="ic-badge-discount"></i>
+                            <i className="ic-badge-discount"></i>
                           </span>
                           {data.badge}% 할인
                           {data.badgeDay ? (
@@ -64,14 +64,18 @@ function useIndexCardList(courseData) {
                         <div className="review">
                           <div className="review-avg">
                             {[...Array(data.starCnt)].map((n, index) => {
-                              return <i className="ic-star-filled"></i>
+                              return (
+                                <i className="ic-star-filled" key={index}></i>
+                              )
                             })}
                           </div>
                           <span className="review-cnt">({data.reviewCnt})</span>
                         </div>
                       ) : null}
                       <div className="price">
-                        {data.del ? <span class="del">{data.del}</span> : null}
+                        {data.del ? (
+                          <span className="del">{data.del}</span>
+                        ) : null}
                         <span>{data.price}</span>
                       </div>
                       <div className="tags">

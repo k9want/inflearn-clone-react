@@ -28,8 +28,8 @@ function RoadmapsMain() {
           <RoadmapsPanelLeft />
           <div className="panel-right">
             <div className="roadmaps-card-list">
-              {roadmapsCardDummy.result.map((data) => {
-                return <RoadmapsCard data={data} />
+              {roadmapsCardDummy.result.map((data, i) => {
+                return <RoadmapsCard data={data} key={data.id} />
               })}
             </div>
 

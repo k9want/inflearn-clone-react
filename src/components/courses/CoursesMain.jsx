@@ -7,65 +7,65 @@ import { coursesPageDummy } from './coursesPageDummy'
 
 function CoursesMain() {
   return (
-    <main class="courses">
-      <div class="container">
+    <main className="courses">
+      <div className="container">
         <CoursesPanelLeft />
-        <div class="courses-panel-right">
-          <header class="courses-header">
-            <h1 class="visually-hidden">전체 카테고리</h1>
-            <div class="courses-search">
+        <div className="courses-panel-right">
+          <header className="courses-header">
+            <h1 className="visually-hidden">전체 카테고리</h1>
+            <div className="courses-search">
               <input type="text" placeholder="강의 검색하기" />
               <button>검색</button>
             </div>
           </header>
-          <main class="courses-main">
-            <div class="breadcrumb">
-              <a href="/courses" class="category-total">
+          <main className="courses-main">
+            <div className="breadcrumb">
+              <a href="/courses" className="category-total">
                 전체
               </a>
             </div>
 
             <CoursesMainSkill />
             <CoursesMainFilter />
-            <div class="courses-card-list">
+            <div className="courses-card-list">
               {coursesPageDummy.result.courses.map((data, i) => {
-                return <CoursesCard data={data} />
+                return <CoursesCard data={data} key={`coursesCard-${i}`} />
               })}
             </div>
 
-            <nav class="courses-pagination">
-              <ul class="courses-pagination-list">
-                <li class="pagination-list-previous courses-pagination-list-item">
+            <nav className="courses-pagination">
+              <ul className="courses-pagination-list">
+                <li className="pagination-list-previous courses-pagination-list-item">
                   <a href="/"> 이전 페이지 </a>
                 </li>
-                <li class="courses-pagination-list-item is-current sm-hidden">
+                <li className="courses-pagination-list-item is-current sm-hidden">
                   <a href="/">1</a>
                 </li>
-                <li class="courses-pagination-list-item sm-hidden">
+                <li className="courses-pagination-list-item sm-hidden">
                   <a href="/">2</a>
                 </li>
-                <li class="courses-pagination-list-item sm-hidden">
+                <li className="courses-pagination-list-item sm-hidden">
                   <a href="/">3</a>
                 </li>
-                <li class="courses-pagination-list-item sm-hidden">
+                <li className="courses-pagination-list-item sm-hidden">
                   <a href="/">4</a>
                 </li>
-                <li class="courses-pagination-list-item sm-hidden">
+                <li className="courses-pagination-list-item sm-hidden">
                   <a href="/">5</a>
                 </li>
-                <li class="courses-pagination-list-item sm-hidden">
+                <li className="courses-pagination-list-item sm-hidden">
                   <a href="/">6</a>
                 </li>
-                <li class="courses-pagination-list-item sm-hidden">
+                <li className="courses-pagination-list-item sm-hidden">
                   <a href="/">7</a>
                 </li>
-                <li class="courses-pagination-list-item sm-hidden">
+                <li className="courses-pagination-list-item sm-hidden">
                   <a href="/">...</a>
                 </li>
-                <li class="courses-pagination-list-item sm-hidden">
+                <li className="courses-pagination-list-item sm-hidden">
                   <a href="/">86</a>
                 </li>
-                <li class="pagination-list-next courses-pagination-list-item">
+                <li className="pagination-list-next courses-pagination-list-item">
                   <a href="/"> 다음 페이지 </a>
                 </li>
               </ul>

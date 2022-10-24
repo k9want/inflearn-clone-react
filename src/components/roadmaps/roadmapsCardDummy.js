@@ -1,6 +1,7 @@
 export const roadmapsCardDummy = {
   result: [
     {
+      id: 1,
       imgUrl: 'roadmaps-1.jpeg',
       level: '입문',
       tag1: '#C#',
@@ -11,6 +12,7 @@ export const roadmapsCardDummy = {
       students: '3147',
     },
     {
+      id: 2,
       imgUrl: 'roadmaps-2.jpeg',
       level: '입문',
       tag1: '#Python',
@@ -22,6 +24,7 @@ export const roadmapsCardDummy = {
       students: '2377',
     },
     {
+      id: 3,
       imgUrl: 'roadmaps-3.jpeg',
       level: '입문',
       tag1: '#Spring',
@@ -32,6 +35,7 @@ export const roadmapsCardDummy = {
       students: '9999+',
     },
     {
+      id: 4,
       imgUrl: 'roadmaps-4.jpeg',
       level: '입문',
       tag1: '#Python',
@@ -42,6 +46,7 @@ export const roadmapsCardDummy = {
       students: '923',
     },
     {
+      id: 5,
       imgUrl: 'roadmaps-5.jpeg',
       level: '입문',
       tag1: '#Docker',
@@ -52,6 +57,7 @@ export const roadmapsCardDummy = {
       students: '300',
     },
     {
+      id: 6,
       imgUrl: 'roadmaps-6.jpeg',
       level: '입문',
       tag1: '#TypeScript',
@@ -62,6 +68,7 @@ export const roadmapsCardDummy = {
       students: '631',
     },
     {
+      id: 7,
       imgUrl: 'roadmaps-7.jpeg',
       level: '입문',
       tag1: '#Python',
@@ -72,6 +79,7 @@ export const roadmapsCardDummy = {
       students: '666',
     },
     {
+      id: 8,
       imgUrl: 'roadmaps-8.jpeg',
       level: '초급',
       tag1: '#Java',
@@ -82,6 +90,7 @@ export const roadmapsCardDummy = {
       students: '6777',
     },
     {
+      id: 9,
       imgUrl: 'roadmaps-9.jpeg',
       level: '입문',
       tag1: '#Python',
@@ -92,6 +101,7 @@ export const roadmapsCardDummy = {
       students: '912',
     },
     {
+      id: 10,
       imgUrl: 'roadmaps-10.jpeg',
       level: '초급',
       tag1: '#함수형 프로그래밍',
@@ -102,6 +112,7 @@ export const roadmapsCardDummy = {
       students: '445',
     },
     {
+      id: 11,
       imgUrl: 'roadmaps-11.jpeg',
       level: '초급',
       tag1: '#프로젝트 관리',
@@ -112,6 +123,7 @@ export const roadmapsCardDummy = {
       students: '10',
     },
     {
+      id: 12,
       imgUrl: 'roadmaps-12.jpeg',
       level: '입문',
       tag1: '#면접',
@@ -122,6 +134,7 @@ export const roadmapsCardDummy = {
       students: '181',
     },
     {
+      id: 13,
       imgUrl: 'roadmaps-13.jpeg',
       level: '초급',
       tag1: '#HTML/CSS',
@@ -133,6 +146,7 @@ export const roadmapsCardDummy = {
       students: '252',
     },
     {
+      id: 14,
       imgUrl: 'roadmaps-14.jpeg',
       level: '입문',
       tag1: '#Python',
@@ -143,6 +157,7 @@ export const roadmapsCardDummy = {
       students: '456',
     },
     {
+      id: 15,
       imgUrl: 'roadmaps-15.jpeg',
       level: '입문',
       tag1: '#게임개발',
@@ -153,6 +168,7 @@ export const roadmapsCardDummy = {
       students: '298',
     },
     {
+      id: 16,
       imgUrl: 'roadmaps-16.jpeg',
       level: '입문',
       tag1: '#C#',
@@ -163,6 +179,7 @@ export const roadmapsCardDummy = {
       students: '432',
     },
     {
+      id: 17,
       imgUrl: 'roadmaps-17.jpeg',
       level: '초급',
       tag1: '#JavaScript',
@@ -173,6 +190,7 @@ export const roadmapsCardDummy = {
       students: '108',
     },
     {
+      id: 18,
       imgUrl: 'roadmaps-18.jpeg',
       level: '초급',
       tag1: '#HTML/CSS',
@@ -183,6 +201,7 @@ export const roadmapsCardDummy = {
       students: '736',
     },
     {
+      id: 19,
       imgUrl: 'roadmaps-19.jpeg',
       level: '입문',
       tag1: '#JavaScript',
@@ -193,6 +212,7 @@ export const roadmapsCardDummy = {
       students: '708',
     },
     {
+      id: 20,
       imgUrl: 'roadmaps-20.jpeg',
       level: '초급',
       tag1: '#HTML/CSS',
@@ -203,6 +223,7 @@ export const roadmapsCardDummy = {
       students: '321',
     },
     {
+      id: 21,
       imgUrl: 'roadmaps-21.jpeg',
       level: '초급',
       tag1: '#Java',
@@ -213,6 +234,7 @@ export const roadmapsCardDummy = {
       students: '2918',
     },
     {
+      id: 22,
       imgUrl: 'roadmaps-22.jpeg',
       level: '입문',
       tag1: '#JavaScript',
@@ -223,6 +245,7 @@ export const roadmapsCardDummy = {
       students: '216',
     },
     {
+      id: 23,
       imgUrl: 'roadmaps-23.jpeg',
       level: '입문',
       tag1: '#Python',
@@ -233,6 +256,7 @@ export const roadmapsCardDummy = {
       students: '517',
     },
     {
+      id: 24,
       imgUrl: 'roadmaps-24.jpeg',
       level: '초급',
       tag1: '#Node.js',

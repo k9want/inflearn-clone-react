@@ -3,16 +3,18 @@ import useIndexCardList from '../../hook/useIndexCardList'
 
 function NewbieCourse({ newbieCourse }) {
   return (
-    <section class="newbie-course">
-      <div class="container">
-        <div class="course-list">
-          <header class="course-header">
+    <section className="newbie-course">
+      <div className="container">
+        <div className="course-list">
+          <header className="course-header">
             <a href="/">
-              <h1 class="course-title">
-                왕초보도 할 수 있어요 💪 <i class="ic-next"></i>
+              <h1 className="course-title">
+                왕초보도 할 수 있어요 💪 <i className="ic-next"></i>
               </h1>
             </a>
-            <span class="course-text">이미 검증된 쉽고 친절한 입문 강의!!</span>
+            <span className="course-text">
+              이미 검증된 쉽고 친절한 입문 강의!!
+            </span>
           </header>
 
           {useIndexCardList(newbieCourse)}

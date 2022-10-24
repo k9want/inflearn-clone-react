@@ -2,18 +2,18 @@ import React from 'react'
 
 function Service() {
   return (
-    <section class="service">
-      <div class="container">
-        <header class="service-header">
+    <section className="service">
+      <div className="container">
+        <header className="service-header">
           <h1>다양한 서비스를 신청하세요.</h1>
           <span>
             인프런의 지식공유자 ˙ 비즈니스 ˙ 대학생 신청방법에 대해 알아보세요.
           </span>
         </header>
 
-        <div class="service-wrapper">
-          <div class="service-card">
-            <div class="service-card-header">
+        <div className="service-wrapper">
+          <div className="service-card">
+            <div className="service-card-header">
               <h3>지식공유자 되기</h3>
               <p>
                 9개월간 온라인 기술 강의로만 1억원!
@@ -22,16 +22,16 @@ function Service() {
                 가져가세요.
               </p>
             </div>
-            <div class="service-card-content">
+            <div className="service-card-content">
               <a href="/">
                 <span> 지식공유자 참여하기 </span>
-                <i class="ic-arrow-right"></i>
+                <i className="ic-arrow-right"></i>
               </a>
             </div>
           </div>
 
-          <div class="service-card">
-            <div class="service-card-header">
+          <div className="service-card">
+            <div className="service-card-header">
               <h3>인프런 비즈니스 신청</h3>
               <p>
                 모든 팀원의 인프런의 강의들을 자유롭게 학습하는 환경을
@@ -41,16 +41,16 @@ function Service() {
                 수 있습니다.
               </p>
             </div>
-            <div class="service-card-content">
+            <div className="service-card-content">
               <a href="/">
                 <span> 비즈니스 신청하기 </span>
-                <i class="ic-arrow-right"></i>
+                <i className="ic-arrow-right"></i>
               </a>
             </div>
           </div>
 
-          <div class="service-card">
-            <div class="service-card-header">
+          <div className="service-card">
+            <div className="service-card-header">
               <h3>인프런 X 대학생</h3>
               <p>
                 학교와 인프런이 함께 하여,
@@ -59,10 +59,10 @@ function Service() {
                 보완하고, 더욱 성장할 수 있도록 도와드립니다.
               </p>
             </div>
-            <div class="service-card-content">
+            <div className="service-card-content">
               <a href="/">
                 <span> 대학생 신청하기 </span>
-                <i class="ic-arrow-right"></i>
+                <i className="ic-arrow-right"></i>
               </a>
             </div>
           </div>

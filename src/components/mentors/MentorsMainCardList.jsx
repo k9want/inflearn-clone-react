@@ -55,7 +55,7 @@ function MentorsMainCardList() {
 
           {pageButton.map((now, i) => {
             return (
-              <li>
+              <li key={i}>
                 <MentorMainPageButton
                   now={now}
                   onClick={() => onClickPageButton(i)}
@@ -68,7 +68,7 @@ function MentorsMainCardList() {
 
           {!pageButton[pageButton.length - 1] ? (
             <MentorMainPageButton
-              style={{ 'margin-left': '9px' }}
+              style={{ marginLeft: '9px' }}
               onClick={() => onClickNextButton()}
             >
               다음

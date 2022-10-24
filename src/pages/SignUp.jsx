@@ -11,23 +11,23 @@ function SignUp(props) {
         setLoginModal={props.setLoginModal}
         loginModal={props.loginModal}
       />
-      <section class="signup" style={useLoginModal(props.loginModal)}>
-        <div class="signup-wrapper">
-          <h3 class="signup-title">회원가입</h3>
-          <div class="signup-description">
+      <section className="signup" style={useLoginModal(props.loginModal)}>
+        <div className="signup-wrapper">
+          <h3 className="signup-title">회원가입</h3>
+          <div className="signup-description">
             <span>인프런에서 다양한 성장의 기회를 얻으세요</span>
           </div>
 
-          <div class="signup-main">
+          <div className="signup-main">
             <SignUpForm />
-            <div class="signup-social">
-              <div class="signup-social-line-wrapper">
-                <hr class="signup-social-line sm-hidden" />
-                <span class="signup-social-line-text">간편 회원가입</span>
+            <div className="signup-social">
+              <div className="signup-social-line-wrapper">
+                <hr className="signup-social-line sm-hidden" />
+                <span className="signup-social-line-text">간편 회원가입</span>
               </div>
 
-              <div class="signup-social-group">
-                <button class="signup-social-button signup-social-kakao">
+              <div className="signup-social-group">
+                <button className="signup-social-button signup-social-kakao">
                   <svg
                     width="18px"
                     xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ function SignUp(props) {
                     </g>
                   </svg>
                 </button>
-                <button class="signup-social-button signup-social-google">
+                <button className="signup-social-button signup-social-google">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -72,7 +72,7 @@ function SignUp(props) {
                   </svg>
                 </button>
               </div>
-              <hr class="signup-social-underline sm-only" />
+              <hr className="signup-social-underline sm-only" />
             </div>
           </div>
         </div>

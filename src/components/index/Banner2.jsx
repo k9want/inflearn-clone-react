@@ -44,7 +44,7 @@ function Banner2({ banner2 }) {
                 backgroundImage: `url(${data.imgUrl})`,
               }}
             >
-              <div class="container">
+              <div className="container">
                 <h1 style={{ color: data.fontColor }}>
                   {data.title1} <br />
                   {data.title2}

@@ -34,39 +34,39 @@ function RoadmapsPanelLeft() {
             <div className="nav-list">
               <div className="nav-checkbox">
                 <input type="checkbox" id="term1" className="visually-hidden" />
-                <label for="term1">개발 · 프로그래밍</label>
+                <label htmlFor="term1">개발 · 프로그래밍</label>
               </div>
               <div className="nav-checkbox">
                 <input type="checkbox" id="term2" className="visually-hidden" />
-                <label for="term2">보안 · 네트워크</label>
+                <label htmlFor="term2">보안 · 네트워크</label>
               </div>
               <div className="nav-checkbox">
                 <input type="checkbox" id="term3" className="visually-hidden" />
-                <label for="term3">데이터 사이언스</label>
+                <label htmlFor="term3">데이터 사이언스</label>
               </div>
               <div className="nav-checkbox">
                 <input type="checkbox" id="term4" className="visually-hidden" />
-                <label for="term4">게임 개발</label>
+                <label htmlFor="term4">게임 개발</label>
               </div>
               <div className="nav-checkbox">
                 <input type="checkbox" id="term5" className="visually-hidden" />
-                <label for="term5">크리에이티브</label>
+                <label htmlFor="term5">크리에이티브</label>
               </div>
               <div className="nav-checkbox">
                 <input type="checkbox" id="term6" className="visually-hidden" />
-                <label for="term6">직무 · 마케팅</label>
+                <label htmlFor="term6">직무 · 마케팅</label>
               </div>
               <div className="nav-checkbox">
                 <input type="checkbox" id="term7" className="visually-hidden" />
-                <label for="term7">학문 · 외국어</label>
+                <label htmlFor="term7">학문 · 외국어</label>
               </div>
               <div className="nav-checkbox">
                 <input type="checkbox" id="term8" className="visually-hidden" />
-                <label for="term8">커리어</label>
+                <label htmlFor="term8">커리어</label>
               </div>
               <div className="nav-checkbox">
                 <input type="checkbox" id="term9" className="visually-hidden" />
-                <label for="term9">교양</label>
+                <label htmlFor="term9">교양</label>
               </div>
             </div>
           </div>
@@ -83,7 +83,7 @@ function RoadmapsPanelLeft() {
                   id="level1"
                   className="visually-hidden"
                 />
-                <label for="level1">입문</label>
+                <label htmlFor="level1">입문</label>
               </div>
               <div className="nav-checkbox">
                 <input
@@ -91,7 +91,7 @@ function RoadmapsPanelLeft() {
                   id="level2"
                   className="visually-hidden"
                 />
-                <label for="level2">초급</label>
+                <label htmlFor="level2">초급</label>
               </div>
               <div className="nav-checkbox">
                 <input
@@ -99,7 +99,7 @@ function RoadmapsPanelLeft() {
                   id="level3"
                   className="visually-hidden"
                 />
-                <label for="level3">중급</label>
+                <label htmlFor="level3">중급</label>
               </div>
             </div>
           </div>
@@ -116,7 +116,7 @@ function RoadmapsPanelLeft() {
                   id="enroll1"
                   className="visually-hidden"
                 />
-                <label for="enroll1">미참여 로드맵</label>
+                <label htmlFor="enroll1">미참여 로드맵</label>
               </div>
               <div className="nav-checkbox">
                 <input
@@ -124,7 +124,7 @@ function RoadmapsPanelLeft() {
                   id="enroll2"
                   className="visually-hidden"
                 />
-                <label for="enroll2">참여 로드맵</label>
+                <label htmlFor="enroll2">참여 로드맵</label>
               </div>
             </div>
           </div>

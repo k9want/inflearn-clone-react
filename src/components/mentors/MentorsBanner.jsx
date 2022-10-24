@@ -81,9 +81,9 @@ function MentorsBanner() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                clip-rule="evenodd"
+                clipRule="evenodd"
                 d="m6.22 3.22c.293-.293.767-.293 1.06 0l4.25 4.25c.293.293.293.767 0 1.06l-4.25 4.25c-.293.293-.767.293-1.06 0s-.293-.767 0-1.06l3.72-3.72-3.72-3.72c-.293-.293-.293-.767 0-1.06z"
-                fill-rule="evenodd"
+                fillRule="evenodd"
               ></path>
             </svg>
           </span>

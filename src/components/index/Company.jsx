@@ -13,13 +13,13 @@ function Company() {
     'NC',
   ]
   return (
-    <section class="company">
+    <section className="company">
       <h3>이미 많은 기업 구성원들이 인프런에서 성장하고 있어요.</h3>
 
-      <div class="company-wrapper">
+      <div className="company-wrapper">
         {companyArr.map((company, i) => {
           return (
-            <div>
+            <div key={`company-${i}`}>
               <img
                 src={require(`../../assets/images/index/company-${i + 1}.jpeg`)}
                 alt={company}

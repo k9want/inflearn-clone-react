@@ -47,63 +47,63 @@ function MentorsMainLeft() {
             onClick={(e) => onClickCheckBox(e, 0)}
           >
             <input type="checkbox" id="term1" className="visually-hidden" />
-            <label for="term1">개발 · 프로그래밍</label>
+            <label htmlFor="term1">개발 · 프로그래밍</label>
           </NavCheckBox>
           <NavCheckBox
             isCheck={isCheck[1]}
             onClick={(e) => onClickCheckBox(e, 1)}
           >
             <input type="checkbox" id="term2" className="visually-hidden" />
-            <label for="term2">보안 · 네트워크</label>
+            <label htmlFor="term2">보안 · 네트워크</label>
           </NavCheckBox>
           <NavCheckBox
             isCheck={isCheck[2]}
             onClick={(e) => onClickCheckBox(e, 2)}
           >
             <input type="checkbox" id="term3" className="visually-hidden" />
-            <label for="term3">데이터 사이언스</label>
+            <label htmlFor="term3">데이터 사이언스</label>
           </NavCheckBox>
           <NavCheckBox
             isCheck={isCheck[3]}
             onClick={(e) => onClickCheckBox(e, 3)}
           >
             <input type="checkbox" id="term4" className="visually-hidden" />
-            <label for="term4">게임 개발</label>
+            <label htmlFor="term4">게임 개발</label>
           </NavCheckBox>
           <NavCheckBox
             isCheck={isCheck[4]}
             onClick={(e) => onClickCheckBox(e, 4)}
           >
             <input type="checkbox" id="term5" className="visually-hidden" />
-            <label for="term5">크리에이티브</label>
+            <label htmlFor="term5">크리에이티브</label>
           </NavCheckBox>
           <NavCheckBox
             isCheck={isCheck[5]}
             onClick={(e) => onClickCheckBox(e, 5)}
           >
             <input type="checkbox" id="term6" className="visually-hidden" />
-            <label for="term6">직무 · 마케팅</label>
+            <label htmlFor="term6">직무 · 마케팅</label>
           </NavCheckBox>
           <NavCheckBox
             isCheck={isCheck[6]}
             onClick={(e) => onClickCheckBox(e, 6)}
           >
             <input type="checkbox" id="term7" className="visually-hidden" />
-            <label for="term7">학문 · 외국어</label>
+            <label htmlFor="term7">학문 · 외국어</label>
           </NavCheckBox>
           <NavCheckBox
             isCheck={isCheck[7]}
             onClick={(e) => onClickCheckBox(e, 7)}
           >
             <input type="checkbox" id="term8" className="visually-hidden" />
-            <label for="term8">커리어</label>
+            <label htmlFor="term8">커리어</label>
           </NavCheckBox>
           <NavCheckBox
             isCheck={isCheck[8]}
             onClick={(e) => onClickCheckBox(e, 8)}
           >
             <input type="checkbox" id="term9" className="visually-hidden" />
-            <label for="term9">교양</label>
+            <label htmlFor="term9">교양</label>
           </NavCheckBox>
         </NavList>
       </NavWrapper>

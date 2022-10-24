@@ -9,16 +9,16 @@ function RoadMapCourse({ roadMapCourse }) {
   const navigationNextRef = useRef(null)
 
   return (
-    <section class="roadmap-course">
-      <div class="container">
-        <header class="course-header">
+    <section className="roadmap-course">
+      <div className="container">
+        <header className="course-header">
           <a href="/">
-            <h1 class="course-title">
+            <h1 className="course-title">
               기본부터 실무까지 제시해주는 로드맵 🏃🏻‍♀️ <span>RoadMap!!</span>
-              <i class="ic-next"></i>
+              <i className="ic-next"></i>
             </h1>
           </a>
-          <span class="course-text">
+          <span className="course-text">
             아무것도 몰라도 따라오다 보면 전문가가 될 수 있어요!
           </span>
         </header>
@@ -49,7 +49,7 @@ function RoadMapCourse({ roadMapCourse }) {
             {roadMapCourse.map((data, i) => {
               return (
                 <SwiperSlide key={`RoadMap-${i}`}>
-                  <div class="roadmap-card">
+                  <div className="roadmap-card">
                     <a href="/">
                       <div>
                         <img
@@ -58,7 +58,7 @@ function RoadMapCourse({ roadMapCourse }) {
                           alt={data.title}
                         />
                       </div>
-                      <div class="card-content">
+                      <div className="card-content">
                         <h3>{data.title}</h3>
                       </div>
                     </a>
