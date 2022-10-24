@@ -2,6 +2,7 @@ export const coursesPageDummy = {
   result: {
     courses: [
       {
+        id: 1,
         imgUrl: 'courses-1.jpeg',
         lectureTitle: '비전공자를 위한 개발자 취업 올인원 가이드 [통합편]',
         badge: '25',
@@ -20,8 +21,10 @@ export const coursesPageDummy = {
         level: '입문',
         category: '취업 · 이직, 교양 · 기타',
         skill: '면접, 포트폴리오',
+        sample: 12,
       },
       {
+        id: 2,
         imgUrl: 'courses-2.jpeg',
         lectureTitle:
           '스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술',
@@ -41,8 +44,10 @@ export const coursesPageDummy = {
         level: '초급',
         category: '백엔드, 웹 개발',
         skill: 'Java, Spring, MVC',
+        sample: 6,
       },
       {
+        id: 3,
         imgUrl: 'courses-3.jpeg',
         lectureTitle:
           '실제 이력서 사례로 알아보는 [합격하는 이력서] 작성 가이드',
@@ -57,8 +62,10 @@ export const coursesPageDummy = {
         level: '입문',
         category: '취업 · 이직, 교양 · 기타',
         skill: '이력서, 면접',
+        sample: 4,
       },
       {
+        id: 4,
         imgUrl: 'courses-4.jpeg',
         lectureTitle: '프로그래밍 시작하기:파이썬 입문(Inflearn Original)',
         badge: '25',
@@ -75,8 +82,10 @@ export const coursesPageDummy = {
         level: '입문',
         category: '프로그래밍 언어',
         skill: 'Python, 딥러닝',
+        sample: 4,
       },
       {
+        id: 5,
         imgUrl: 'courses-5.jpeg',
         lectureTitle:
           '[C#과 유니티로 만드는 MMORPG 게임 개발 시리즈] Part1: C# 기초: 프로그래밍 입문',
@@ -96,8 +105,10 @@ export const coursesPageDummy = {
         level: '입문',
         category: '게임 개발, 프로그래밍 언어',
         skill: 'C#',
+        sample: 6,
       },
       {
+        id: 6,
         imgUrl: 'courses-6.jpeg',
         lectureTitle: '인프콘 2022 다시보기',
         instructor: '인프런',
@@ -116,8 +127,10 @@ export const coursesPageDummy = {
         level: '입문',
         category: '교양 · 기타, 기타',
         skill: '',
+        sample: 6,
       },
       {
+        id: 7,
         imgUrl: 'courses-7.jpeg',
         lectureTitle: '따라하면서 배우는 고박사의 유니티 기초',
         instructor: '고박사',
@@ -131,8 +144,10 @@ export const coursesPageDummy = {
         level: '입문',
         category: '게임 프로그래밍, 게임 개발',
         skill: 'Unity',
+        sample: 6,
       },
       {
+        id: 8,
         imgUrl: 'courses-8.jpeg',
         lectureTitle: '컴퓨터,웹,코딩,프로그래밍의 시작 - Web1',
         instructor: 'Egoing Lee',
@@ -146,8 +161,10 @@ export const coursesPageDummy = {
         level: '입문',
         category: '웹 개발',
         skill: 'HTML/CSS',
+        sample: 5,
       },
       {
+        id: 9,
         imgUrl: 'courses-9.jpeg',
         lectureTitle: '퍼블리셔 개인 포트폴리오 홈페이지 제작 완벽 가이드(PDF)',
         badge: '20',
@@ -166,8 +183,10 @@ export const coursesPageDummy = {
         level: '초급',
         category: '웹 퍼블리싱, 취업 · 이직',
         skill: '포트폴리오, 웹 디자인, HTML/CSS',
+        sample: 4,
       },
       {
+        id: 10,
         imgUrl: 'courses-10.jpeg',
         lectureTitle: '모두의 깃 & 깃허브',
         badge: '30',
@@ -186,8 +205,10 @@ export const coursesPageDummy = {
         level: '입문',
         category: '개발도구',
         skill: 'Github, Git',
+        sample: 9,
       },
       {
+        id: 11,
         imgUrl: 'courses-11.jpeg',
         lectureTitle: "고객의 친구가 되기 위한 	'UX Writing'",
         badge: '24',
@@ -206,8 +227,10 @@ export const coursesPageDummy = {
         level: '입문',
         category: 'UX/UI, 기획 · 전략 · PM',
         skill: '카피라이팅, 서비스 기획',
+        sample: 8,
       },
       {
+        id: 12,
         imgUrl: 'courses-12.jpeg',
         lectureTitle: '30분 요약강좌 시즌5 : 알작딱깔센 flex & grid',
         instructor: '제주코딩베이스캠프',
@@ -221,8 +244,10 @@ export const coursesPageDummy = {
         level: '초급',
         category: '웹 개발, 프론트엔드, 웹 퍼블리싱',
         skill: 'HTML/CSS, 반응형 웹, Flex',
+        sample: 7,
       },
       {
+        id: 13,
         imgUrl: 'courses-13.jpeg',
         lectureTitle: '클라우드 서비스 AWS',
         instructor: 'Egoing Lee',
@@ -236,9 +261,11 @@ export const coursesPageDummy = {
         level: '초급',
         category: '데브옵스 · 인프라, 클라우드',
         skill: 'AWS',
+        sample: 4,
       },
 
       {
+        id: 14,
         imgUrl: 'courses-14.jpeg',
         lectureTitle:
           '[백문이불여일타] 데이터 분석을 위한 SQL 실전표 (무료 미니 코스)',
@@ -253,8 +280,10 @@ export const coursesPageDummy = {
         level: '중급이상',
         category: '데이터 분석, 기타',
         skill: 'SQL',
+        sample: 9,
       },
       {
+        id: 15,
         imgUrl: 'courses-15.jpeg',
         lectureTitle: '비전공자를 위한 진짜 입문 올인원 개발 클래스',
         instructor: '그랩',
@@ -273,9 +302,11 @@ export const coursesPageDummy = {
         level: '입문',
         category: '풀스택, 웹 개발, 취업 · 이직, 프론트엔드',
         skill: 'JavaScript, React, Node.js',
+        sample: 6,
       },
 
       {
+        id: 16,
         imgUrl: 'courses-16.jpeg',
         lectureTitle: 'Flutter 앱 개발 완성',
         instructor: 'DevStory',
@@ -290,9 +321,11 @@ export const coursesPageDummy = {
         level: '입문',
         category: '모바일 앱 개발',
         skill: 'Flutter',
+        sample: 5,
       },
 
       {
+        id: 17,
         imgUrl: 'courses-17.jpeg',
         lectureTitle: '블렌더 처음 시작부터 로우폴리 3D 애니메이션 까지',
         instructor: 'AZTechnology',
@@ -311,8 +344,10 @@ export const coursesPageDummy = {
         level: '입문',
         category: 'CAD · 3D 모델링, 디자인 툴, 게임 아트 · 그래픽',
         skill: 'Blender',
+        sample: 6,
       },
       {
+        id: 18,
         imgUrl: 'courses-18.jpeg',
         lectureTitle: '생활코딩 - 자바스크립트 (JavaScript) 기본',
         instructor: 'Egoing Lee',
@@ -326,8 +361,10 @@ export const coursesPageDummy = {
         level: '입문',
         category: '프로그래밍 언어',
         skill: 'JavaScript',
+        sample: 6,
       },
       {
+        id: 19,
         imgUrl: 'courses-19.jpeg',
         lectureTitle: 'JPA & Spring Data JPA 기초',
         instructor: '최범균',
@@ -340,8 +377,10 @@ export const coursesPageDummy = {
         level: '초급',
         category: '백엔드, 웹 개발',
         skill: 'Spring, JPA',
+        sample: 5,
       },
       {
+        id: 20,
         imgUrl: 'courses-20.jpeg',
         lectureTitle: 'UI와 함께 배우는 Swift - 레벨 2',
         badge: '',
@@ -360,8 +399,10 @@ export const coursesPageDummy = {
         level: '입문',
         category: '모바일 앱 개발, 프로그래밍 언어',
         skill: 'Swift, SwiftUI',
+        sample: 5,
       },
       {
+        id: 21,
         imgUrl: 'courses-21.jpeg',
         lectureTitle: '[입문자를 위한 UE5] Part2.언리얼 엔진 2D 게임 개발 입문',
         badge: '30',
@@ -380,8 +421,10 @@ export const coursesPageDummy = {
         level: '초급',
         category: '게임 프로그래밍, 게임 개발',
         skill: 'Unreal Engine, UE Blueprint',
+        sample: 7,
       },
       {
+        id: 22,
         imgUrl: 'courses-22.jpeg',
         lectureTitle: '계산기로 시작해보는 SwiftUI',
         badge: '',
@@ -400,8 +443,10 @@ export const coursesPageDummy = {
         level: '초급',
         category: '모바일 앱 개발',
         skill: 'SwiftUI, Swift',
+        sample: 7,
       },
       {
+        id: 23,
         imgUrl: 'courses-23.jpeg',
         lectureTitle: '엑셀 분석작업의 모든것',
         badge: '10',
@@ -420,8 +465,10 @@ export const coursesPageDummy = {
         level: '초급',
         category: '오피스',
         skill: 'Excel, MS-Office',
+        sample: 6,
       },
       {
+        id: 24,
         imgUrl: 'courses-24.jpeg',
         lectureTitle:
           '따라하며 배우는 노드, 리액트 시리즈 - 레딧 사이트 만들기(NextJS)',
@@ -441,6 +488,7 @@ export const coursesPageDummy = {
         level: '초급',
         category: '클론코딩, Node.js, React',
         skill: '카피라이팅, 서비스 기획',
+        sample: 7,
       },
     ],
   },

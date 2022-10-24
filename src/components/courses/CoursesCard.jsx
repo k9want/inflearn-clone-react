@@ -5,7 +5,7 @@ function CoursesCard({ data }) {
   const navigate = useNavigate()
 
   const onClickCardBack = () => {
-    navigate(`/course/${data.lectureTitle}`)
+    navigate(`/course/${data.id}`)
   }
 
   return (
