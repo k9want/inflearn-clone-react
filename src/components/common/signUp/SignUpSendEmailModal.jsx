@@ -1,6 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function SignUpSendEmailModal(props) {
+  const navigate = useNavigate()
+
+  const onClickBeforeButton = () => {
+    props.setHiddenEmailModal(true)
+    navigate('/')
+  }
+
   return (
     <div className="signUp-send">
       <div className="signUp-send-info">
@@ -17,7 +25,7 @@ function SignUpSendEmailModal(props) {
         </p>
       </div>
       <div className="signUp-send-button">
-        <button onClick={() => props.setHiddenEmailModal(true)}>
+        <button onClick={() => onClickBeforeButton()}>
           이전 페이지로 돌아가기
         </button>
       </div>
