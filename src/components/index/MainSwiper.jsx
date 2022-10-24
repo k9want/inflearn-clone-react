@@ -98,8 +98,12 @@ function MainSwiper({ mainBanner, mainBullets }) {
                           <br />
                           {data.title2}
                         </h1>
-                        <p style={data.textColor}>{data.description1}</p>
-                        <p style={data.textColor}>{data.description2}</p>
+                        <p className="sm-hidden" style={data.textColor}>
+                          {data.description1}
+                        </p>
+                        <p className="sm-hidden" style={data.textColor}>
+                          {data.description2}
+                        </p>
                       </div>
                     </div>
                     <div className="swiper-img-right">
