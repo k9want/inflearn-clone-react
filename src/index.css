@@ -564,13 +564,13 @@ ol {
   border: 0 !important;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .sm-only {
     display: none !important;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .md-only {
     display: none !important;
   }
@@ -588,13 +588,13 @@ ol {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .sm-hidden {
     display: none !important;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   .md-hidden {
     display: none !important;
   }
@@ -3325,6 +3325,14 @@ section[class$='-course'] .courses-card-list {
   }
 }
 
+.banner2-section {
+  padding: 24px 0;
+}
+
+.banner2-section .container {
+  padding: 0 10px;
+}
+
 .banner2 {
   padding: 24px 0;
 }
@@ -3337,7 +3345,8 @@ section[class$='-course'] .courses-card-list {
 
 .banner2-btn-container {
   position: relative;
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   padding: 0 10px;
   margin: 0 auto;
 }
@@ -3420,6 +3429,20 @@ section[class$='-course'] .courses-card-list {
   border: none;
   border-radius: 4px;
   white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .banner2-section {
+    padding: 16px 0;
+  }
+
+  .banner2-wrapper {
+    padding: 16px 0;
+  }
+
+  .banner2-wrapper h1 {
+    font-size: 1rem;
+  }
 }
 
 .company {

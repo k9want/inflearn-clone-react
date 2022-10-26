@@ -8,10 +8,10 @@ function Banner2({ banner2 }) {
   const navigationNextRef = useRef(null)
 
   return (
-    <>
+    <section className="banner2-section">
+      <h1 className="visually-hidden">banner2 section</h1>
       <Swiper
         modules={[Navigation, Pagination]}
-        tag="section"
         className="banner2"
         slidesPerView={1}
         navigation={{
@@ -58,7 +58,7 @@ function Banner2({ banner2 }) {
           )
         })}
       </Swiper>
-      <div className="banner2-btn-container">
+      <div className="banner2-btn-container sm-hidden">
         <div className="banner2-swiper-btn-group">
           <div className="banner2-swiper-btn prev" ref={navigationPrevRef}>
             <i className="ic-previous banner2-swiper-btn-inner"></i>
@@ -69,7 +69,7 @@ function Banner2({ banner2 }) {
           </div>
         </div>
       </div>
-    </>
+    </section>
   )
 }
 
