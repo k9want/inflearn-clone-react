@@ -3191,11 +3191,22 @@ section[class$='-course'] .courses-card-list {
   padding: 24px 0;
 }
 
+.review-section .container {
+  padding: 0 10px;
+  max-width: 1200px;
+  width: auto;
+}
 .review-wrapper {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
+
+.review-wrapper .review-left {
+  width: 100%;
+  max-width: 480px;
+  padding: 40px 16px 40px 0;
+}
+
 .review-wrapper .review-left h1 {
   font-size: 2.25rem;
   line-height: 1.5em;
@@ -3250,6 +3261,68 @@ section[class$='-course'] .courses-card-list {
   position: absolute;
   bottom: 0;
   z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .review-section {
+    padding: 16px 0;
+  }
+
+  .review-section .container {
+    padding: 0 16px;
+  }
+
+  .review-wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .review-wrapper .review-left {
+    max-width: unset;
+    padding: 0;
+    margin-bottom: 36px;
+  }
+
+  .review-wrapper .review-left h1 {
+    font-size: 1.5rem;
+    line-height: 1.33;
+    margin-bottom: 8px;
+  }
+
+  .review-wrapper .review-left p {
+    margin-bottom: 32px;
+    font-size: 0.9375rem;
+  }
+
+  .review-wrapper .review-left .buttons a {
+    line-height: 1;
+  }
+
+  .review-wrapper .review-right {
+    width: 100%;
+    max-width: unset;
+    padding: 0 32px;
+  }
+
+  .review-card-header .student {
+    font-size: 0.9375rem;
+  }
+
+  .review-card-content a h1 {
+    font-size: 1rem;
+  }
+
+  .review-card-content p {
+    font-size: 0.9375rem;
+  }
+
+  .review-card-list {
+    position: relative;
+    height: 480px;
+  }
+
+  .review-wrapper .review-right .review-blur {
+    height: 60px;
+  }
 }
 
 .banner2 {
