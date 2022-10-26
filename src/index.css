@@ -1204,17 +1204,28 @@ ol {
   line-height: 17.1px;
 }
 
+.curation-course .card-list {
+  min-width: 100%;
+}
+
 .curation-card {
+  max-width: 32.2%;
+  min-width: 32.2%;
   margin: 2px;
 }
-.curation-card div {
-  width: 376px;
-  margin-bottom: 20px;
-}
-.curation-card div img {
-  display: block;
+
+.curation-card .curation-card-wrapper .curation-card-img {
   width: 100%;
   height: 100%;
+  margin-bottom: 20px;
+}
+.curation-card .curation-card-img img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  min-width: 100%;
+  height: auto;
+  object-fit: cover;
   border-radius: 3px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 20%);
 }
@@ -1230,7 +1241,7 @@ ol {
 }
 .curation-card .card-content p {
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5em;
   color: #595959;
   height: 3rem;
   overflow: hidden;
@@ -1240,6 +1251,22 @@ ol {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   word-break: keep-all;
+}
+
+@media screen and (max-width: 768px) {
+  .curation-card {
+    width: 280px;
+    max-width: 280px;
+    min-width: 280px;
+  }
+
+  .curation-card .card-content h3 {
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+  .curation-card .card-content p {
+    font-size: 0.9375rem;
+  }
 }
 
 .recent-course .card {
@@ -2910,7 +2937,7 @@ ol {
   }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
   .swiper-img .container {
     max-height: 250px;
     min-height: 250px;
@@ -3034,7 +3061,7 @@ ol {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
   .search {
     padding-bottom: 16px;
   }
@@ -3080,7 +3107,7 @@ section[class$='-course'] .courses-card-list {
   padding: 0 10px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
   .free-course .container,
   .newbie-course .container,
   .recent-course .container,
@@ -3120,7 +3147,7 @@ section[class$='-course'] .courses-card-list {
   color: #757575;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
   .course-header {
     margin-bottom: 12px;
   }
@@ -3152,6 +3179,12 @@ section[class$='-course'] .courses-card-list {
 
 .curation-course .card-list > :not(:first-child) {
   margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .curation-course .card-list > :not(:first-child) {
+    margin-left: 9px;
+  }
 }
 
 .review-section {
@@ -4186,7 +4219,7 @@ footer .wrapper .info {
   margin-right: 0;
   padding: 0.75rem;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
   .courses-card-list .card {
     padding: 8px;
   }
