@@ -2,7 +2,7 @@ import React from 'react'
 
 function HashTag() {
   return (
-    <section className="hashtag">
+    <section className="hashtag sm-hidden">
       <div className="container">
         <ul className="hashtag-wrapper">
           <li className="hashtag-btn">
