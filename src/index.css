@@ -3516,7 +3516,13 @@ section[class$='-course'] .courses-card-list {
   font-weight: 400;
   color: #757575;
 }
-.service-wrapper {
+
+.service-content {
+  word-break: break-word;
+  overflow-x: hidden;
+}
+
+.service-card-wrapper {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -3524,8 +3530,32 @@ section[class$='-course'] .courses-card-list {
   max-width: 1200px;
   flex-wrap: nowrap;
 }
-.service-wrapper .service-card:not(:first-child) {
+
+.service-card-wrapper .service-card:not(:first-child) {
   margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .service {
+    padding: 32px 0;
+  }
+
+  .service .container {
+    padding: 0 16px;
+  }
+  .service-header h1 {
+    font-size: 1.25rem;
+  }
+
+  .service-card {
+    width: 328px;
+    height: 282px;
+    padding: 50px 24px;
+  }
+
+  .service-card p {
+    font-size: 0.9375rem;
+  }
 }
 
 footer {
