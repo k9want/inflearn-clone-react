@@ -16,7 +16,9 @@ function FreeCourse({ freeCourse }) {
             </span>
           </header>
 
-          {useIndexCardList(freeCourse)}
+          <div className="courses-card-wrapper">
+            {useIndexCardList(freeCourse)}
+          </div>
         </div>
       </div>
     </section>

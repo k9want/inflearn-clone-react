@@ -15,8 +15,9 @@ function RecentCourse({ recentCourse }) {
               </h1>
             </a>
           </header>
-
-          {useIndexCardList(recentCourse)}
+          <div className="courses-card-wrapper">
+            {useIndexCardList(recentCourse)}
+          </div>
         </div>
       </div>
     </section>

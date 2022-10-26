@@ -16,8 +16,9 @@ function NewbieCourse({ newbieCourse }) {
               이미 검증된 쉽고 친절한 입문 강의!!
             </span>
           </header>
-
-          {useIndexCardList(newbieCourse)}
+          <div className="courses-card-wrapper">
+            {useIndexCardList(newbieCourse)}
+          </div>
         </div>
       </div>
     </section>

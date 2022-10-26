@@ -3,12 +3,20 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css/bundle'
 import { useRef } from 'react'
 import { Navigation } from 'swiper'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 function useIndexCardList(courseData) {
   const navigationPrevRef = useRef(null)
   const navigationNextRef = useRef(null)
+
+  const navigate = useNavigate()
+
+  const onClickCardBack = () => {
+    navigate('/')
+  }
+
   return (
-    <div className="card-list">
+    <div className="courses-card-list">
       <Swiper
         navigation={{
           prevEl: navigationPrevRef.current,
@@ -28,79 +36,86 @@ function useIndexCardList(courseData) {
         }}
         modules={[Navigation]}
         tag="div"
-        slidesPerView={5}
-        slidesPerGroup={5}
+        slidesPerView={2}
+        slidesPerGroup={2}
+        spaceBetween={6}
+        breakpoints={{
+          1180: { slidesPerGroup: 5, slidesPerView: 5 },
+          1042: { slidesPerGroup: 4, slidesPerView: 4 },
+          600: { slidesPerGroup: 3, slidesPerView: 3 },
+        }}
       >
         {courseData.map((data, i) => {
           return (
             <SwiperSlide key={`Course-${i}`}>
               <div className="card">
                 <div className="card-front">
-                  <a href="/">
-                    <div className="card-img">
-                      <img
-                        src={require('../assets/images/index/' + data.imgUrl)}
-                        alt={data.lectureTitle}
-                      />
-                      {data.badge ? (
-                        <div className="course-badge">
-                          <span className="course-badge-icon">
-                            <i className="ic-badge-discount"></i>
+                  <div className="card-img">
+                    <img
+                      src={require('../assets/images/index/' + data.imgUrl)}
+                      alt={data.lectureTitle}
+                    />
+                    {data.badge ? (
+                      <div className="course-badge">
+                        <span className="course-badge-icon">
+                          <i className="ic-badge-discount"></i>
+                        </span>
+                        {data.badge}% 할인
+                        {data.badgeDay ? (
+                          <span className="course-badgeDay">
+                            (D-{data.badgeDay})
                           </span>
-                          {data.badge}% 할인
-                          {data.badgeDay ? (
-                            <span className="course-badgeDay">
-                              (D-{data.badgeDay})
-                            </span>
-                          ) : null}
-                        </div>
-                      ) : null}
-                    </div>
+                        ) : null}
+                      </div>
+                    ) : null}
+                  </div>
 
-                    <div className="card-content">
-                      <div className="lecture-title">{data.lectureTitle}</div>
-                      <div className="instructor">{data.instructor}</div>
-                      {data.reviewCnt ? (
-                        <div className="review">
-                          <div className="review-avg">
-                            {[...Array(data.starCnt)].map((n, index) => {
-                              return (
-                                <i className="ic-star-filled" key={index}></i>
-                              )
-                            })}
-                          </div>
-                          <span className="review-cnt">({data.reviewCnt})</span>
+                  <div className="card-content">
+                    <div className="lecture-title">{data.lectureTitle}</div>
+                    <div className="instructor">{data.instructor}</div>
+                    {data.reviewCnt ? (
+                      <div className="review">
+                        <div className="review-avg">
+                          {[...Array(data.starCnt)].map((n, index) => {
+                            return (
+                              <i className="ic-star-filled" key={index}></i>
+                            )
+                          })}
                         </div>
+                        <span className="review-cnt">({data.reviewCnt})</span>
+                      </div>
+                    ) : null}
+                    <div className="price">
+                      {data.del ? (
+                        <span className="del">{data.del}</span>
                       ) : null}
-                      <div className="price">
-                        {data.del ? (
-                          <span className="del">{data.del}</span>
-                        ) : null}
-                        <span>{data.price}</span>
-                      </div>
-                      <div className="tags">
-                        {data.students ? (
-                          <span className="tag-students">
-                            {' '}
-                            +{data.students}명{' '}
-                          </span>
-                        ) : null}
-                        {data.isNew ? (
-                          <span className="tag-new"> 새강의 </span>
-                        ) : null}
-                        {data.isUpdate ? (
-                          <span className="tag-new"> 업데이트 </span>
-                        ) : null}
-                        {data.isDiscount ? (
-                          <span className="tag-discount"> 할인중 </span>
-                        ) : null}
-                      </div>
+                      <span>{data.price}</span>
                     </div>
-                  </a>
+                    <div className="tags">
+                      {data.students ? (
+                        <span className="tag-students">
+                          {' '}
+                          +{data.students}명{' '}
+                        </span>
+                      ) : null}
+                      {data.isNew ? (
+                        <span className="tag-new"> 새강의 </span>
+                      ) : null}
+                      {data.isUpdate ? (
+                        <span className="tag-new"> 업데이트 </span>
+                      ) : null}
+                      {data.isDiscount ? (
+                        <span className="tag-discount"> 할인중 </span>
+                      ) : null}
+                    </div>
+                  </div>
                 </div>
 
-                <div className="card-back">
-                  <a href="/">
+                <div
+                  className="card-back sm-hidden"
+                  onClick={() => onClickCardBack()}
+                >
+                  <div className="card-back-info">
                     <p className="lecture-title">{data.lectureTitle}</p>
                     <div className="lecture-metas">
                       <div className="level">
@@ -162,7 +177,7 @@ function useIndexCardList(courseData) {
                         <span>{data.skill}</span>
                       </div>
                     </div>
-                  </a>
+                  </div>
                   <div className="lecture-active">
                     <i className="ic-heart"></i>
                     <i className="ic-plus"></i>
@@ -173,11 +188,11 @@ function useIndexCardList(courseData) {
           )
         })}
       </Swiper>
-      <div className="course-swiper-btn prev" ref={navigationPrevRef}>
+      <div className="course-swiper-btn prev sm-hidden" ref={navigationPrevRef}>
         <i className="ic-previous course-swiper-btn-inner"></i>
       </div>
 
-      <div className="course-swiper-btn next" ref={navigationNextRef}>
+      <div className="course-swiper-btn next sm-hidden" ref={navigationNextRef}>
         <i className="ic-next course-swiper-btn-inner"></i>
       </div>
     </div>
