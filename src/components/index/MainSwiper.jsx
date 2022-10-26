@@ -71,12 +71,19 @@ function MainSwiper({ mainBanner, mainBullets }) {
         onInit={(swiper) => setCurrentNum(swiper.realIndex + 1)}
         onSlideChange={(swiper) => {
           setCurrentNum(swiper.realIndex + 1)
-          if (swiper.pagination.bullets[swiper.realIndex]) {
+          if (swiper.realIndex === 0) {
+            setPaginationTransform(0)
+          } else if (swiper.realIndex === 10 && swiper.activeIndex === 0) {
+            setPaginationTransform(
+              swiper.pagination.el.offsetParent.scrollWidth -
+                swiper.pagination.el.offsetWidth
+            )
+          } else {
             swiper.pagination.bullets[swiper.realIndex].click()
           }
         }}
         loop="true"
-        loopedSlides={SwiperSlide.length}
+        loopedSlides={SwiperSlide.length - 1}
         navigation={{
           prevEl: navigationPrevRef.current,
           nextEl: navigationNextRef.current,
