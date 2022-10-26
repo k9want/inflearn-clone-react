@@ -3454,7 +3454,7 @@ section[class$='-course'] .courses-card-list {
   color: #000a12;
 }
 .company h3 {
-  line-height: 1.4;
+  line-height: 1.47;
   letter-spacing: -0.3px;
   font-size: 20px;
   margin-bottom: 20px;
@@ -3465,6 +3465,7 @@ section[class$='-course'] .courses-card-list {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .company-wrapper div {
   margin: 0 15px 20px;
@@ -3475,6 +3476,22 @@ section[class$='-course'] .courses-card-list {
   display: block;
   height: 100%;
   filter: grayscale(1);
+}
+
+@media screen and (max-width: 768px) {
+  .company {
+    padding: 32px 0 16px;
+  }
+
+  .company h3 {
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+
+  .company-wrapper div {
+    margin: 0 8px 16px;
+    height: 16px;
+  }
 }
 
 .service {

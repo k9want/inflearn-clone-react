@@ -14,7 +14,10 @@ function Company() {
   ]
   return (
     <section className="company">
-      <h3>이미 많은 기업 구성원들이 인프런에서 성장하고 있어요.</h3>
+      <h3>
+        이미 많은 기업 구성원들이 <br className="sm-only" /> 인프런에서 성장하고
+        있어요.
+      </h3>
 
       <div className="company-wrapper">
         {companyArr.map((company, i) => {
