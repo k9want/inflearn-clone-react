@@ -1,8 +1,11 @@
 export const mainPageDummy = {
   result: {
     mainBullets: [
+      '클라우드 ☁',
+      '프로토타이핑 툴',
       '인프런 동료찾기',
       '2022 추석 위크',
+      '이펙티브 자바',
       '신규 강의 🎁',
       '입문 로드맵',
       '인프콘 다시보기',
@@ -10,7 +13,30 @@ export const mainPageDummy = {
       '지식공유신청',
       '인프런은 🌱',
     ],
+
     mainBanner: [
+      {
+        imgUrl: 'main10.png',
+        backgroundColor: { backgroundColor: '#3f70f9' },
+        spanColor: { color: '#0f121c', backgroundColor: '#9ffffa' },
+        textColor: { color: '#ffffff' },
+        span: '큐레이션 20%',
+        title1: '미래를 위한 투자,',
+        title2: '대세는 클라우드 컴퓨팅 ☁️',
+        description1: '테크 업계는 지금 클라우드 도입 중! ',
+        description2: 'AWS, Azure, GCP 강의를 전부 만나보세요.',
+      },
+      {
+        imgUrl: 'main11.png',
+        backgroundColor: { backgroundColor: '#6e7cf8' },
+        spanColor: { color: '#000000', backgroundColor: '#ffffff' },
+        textColor: { color: '#ffffff' },
+        span: '깜짝 할인 20%',
+        title1: '기획자와 디자이너라면 주목 👩🏻‍🎨',
+        title2: '프로토타이핑 툴 모여라!',
+        description1: '동작하는 명확한 이미지로',
+        description2: '원하는 걸 효과적으로 전달해요.',
+      },
       {
         imgUrl: 'main1.gif',
         backgroundColor: { backgroundColor: '#00c471' },
@@ -32,6 +58,17 @@ export const mainPageDummy = {
         title2: '풍성한 추석 위크 🌕',
         description1: '매일 성장하는 나를 만드는 시간',
         description2: '',
+      },
+      {
+        imgUrl: 'main9.png',
+        backgroundColor: { backgroundColor: '#020204' },
+        spanColor: { color: '#ffffff', backgroundColor: '#E50CBE' },
+        textColor: { color: '#ffffff' },
+        span: '얼리버드 20%',
+        title1: '수준 높은 백엔드 개발자가',
+        title2: '되고 싶은 당신을 위해',
+        description1: '마이크로소프트 개발자 백기선 님과 함께',
+        description2: '쉽고 완벽하게 학습하세요.',
       },
       {
         imgUrl: 'main3.gif',

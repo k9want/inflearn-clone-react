@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css/bundle'
-import 'swiper/css/pagination'
 import { Autoplay, Navigation, Pagination } from 'swiper'
 import { useRef } from 'react'
 import { useState } from 'react'
+import { debounce } from 'lodash'
 
 function MainSwiper({ mainBanner, mainBullets }) {
+  const [windowSize, setwindowSize] = React.useState(window.innerWidth)
+
   const [currentNum, setCurrentNum] = useState(1)
 
   const [isAuto, setIsAuto] = useState(true)
@@ -14,6 +15,8 @@ function MainSwiper({ mainBanner, mainBullets }) {
 
   const navigationPrevRef = useRef(null)
   const navigationNextRef = useRef(null)
+
+  const [paginationTransform, setPaginationTransform] = useState(0)
 
   const handleIsAuto = () => {
     if (isAuto) {
@@ -24,6 +27,33 @@ function MainSwiper({ mainBanner, mainBullets }) {
       setIsAuto(true)
     }
   }
+
+  const onClickPaginationList = (e) => {
+    const listWidth = e.currentTarget.scrollWidth
+    const boxHarf = e.currentTarget.parentElement.offsetWidth / 2
+    const selectTargetPos = e.target.offsetLeft + e.target.offsetWidth / 2
+    if (selectTargetPos <= boxHarf) {
+      setPaginationTransform(0)
+    } else if (listWidth - selectTargetPos <= boxHarf) {
+      setPaginationTransform(
+        listWidth - e.currentTarget.parentElement.offsetWidth
+      )
+    } else {
+      setPaginationTransform(selectTargetPos - boxHarf)
+    }
+  }
+
+  const handleResize = debounce(() => {
+    setwindowSize(window.innerWidth)
+    document.getElementsByClassName('swiper-pagination-btn-active')[0].click()
+  }, 100)
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return (
     <section className="swiper-section">
@@ -41,6 +71,9 @@ function MainSwiper({ mainBanner, mainBullets }) {
         onInit={(swiper) => setCurrentNum(swiper.realIndex + 1)}
         onSlideChange={(swiper) => {
           setCurrentNum(swiper.realIndex + 1)
+          if (swiper.pagination.bullets[swiper.realIndex]) {
+            swiper.pagination.bullets[swiper.realIndex].click()
+          }
         }}
         loop="true"
         loopedSlides={SwiperSlide.length}
@@ -52,13 +85,15 @@ function MainSwiper({ mainBanner, mainBullets }) {
           clickable: true,
           el: '.swiper-pagination-list',
           bulletClass: 'swiper-pagination-btn',
-
           bulletActiveClass: 'swiper-pagination-btn-active',
           renderBullet: (index, className) => {
             return (
               '<span class="' +
               className +
-              '">' +
+              '"' +
+              'index=' +
+              index +
+              '>' +
               mainBullets[index] +
               '</span>'
             )
@@ -122,7 +157,7 @@ function MainSwiper({ mainBanner, mainBullets }) {
           )
         })}
       </Swiper>
-      <div className="swiper-pagination-group">
+      <div className="swiper-pagination-group sm-hidden">
         <div className="container">
           <div className="swiper-pagination-wrapper">
             <div className="swiper-pagination-controller">
@@ -147,7 +182,15 @@ function MainSwiper({ mainBanner, mainBullets }) {
               </div>
             </div>
             <div className="divider"></div>
-            <div className="swiper-pagination-list"></div>
+            <div className="pagination-container">
+              <div
+                className="swiper-pagination-list"
+                style={{
+                  transform: `translate(${paginationTransform * -1}px, 0)`,
+                }}
+                onClickCapture={(e) => onClickPaginationList(e)}
+              ></div>
+            </div>
             <button className="swiper-pagination-dropdown" type="button">
               <i className="ic-down"></i>
             </button>

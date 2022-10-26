@@ -2950,8 +2950,14 @@ ol {
 .swiper-pagination-group .container {
   padding: 0 10px;
 }
+@media screen and (max-width: 1280px) {
+  .swiper-pagination-group .container {
+    width: auto;
+  }
+}
 
 .swiper-pagination-wrapper {
+  position: relative;
   display: grid;
   padding-top: 13.5px;
   grid-template-columns: 135px 33px 1fr 52px;
@@ -2965,13 +2971,21 @@ ol {
   margin: 0 16px;
   background-color: #dee2e6;
 }
-.swiper-pagination-list {
-  /* position: relative; */
-  display: flex;
+.pagination-container {
+  position: relative;
   overflow: hidden;
   height: 36px;
-  width: 960px !important;
 }
+
+.swiper-pagination-list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  z-index: 71;
+  height: 36px;
+}
+
 .swiper-pagination-btn {
   flex: 0 0 auto;
   padding: 0 16px;
