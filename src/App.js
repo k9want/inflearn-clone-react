@@ -10,6 +10,7 @@ import CommunityChats from './pages/CommunityChats'
 import CommunityStudies from './pages/CommunityStudies'
 import CommunityReviews from './pages/CommunityReviews'
 import CommunityMentoringsReviews from './pages/CommunityMentoringsReviews'
+import BottomNav from './components/common/header/navbar/BottomNav'
 
 function App() {
   const [loginModal, setLoginModal] = useState(false)
@@ -92,6 +93,7 @@ function App() {
           }
         />
       </Routes>
+      <BottomNav />
     </div>
   )
 }
