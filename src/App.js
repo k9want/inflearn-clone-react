@@ -10,12 +10,15 @@ import CommunityChats from './pages/CommunityChats'
 import CommunityStudies from './pages/CommunityStudies'
 import CommunityReviews from './pages/CommunityReviews'
 import CommunityMentoringsReviews from './pages/CommunityMentoringsReviews'
+import CourseDetail from './pages/CourseDetail'
 import BottomNav from './components/common/header/navbar/BottomNav'
 
 function App() {
   const [loginModal, setLoginModal] = useState(false)
   return (
     <div className="App">
+      <BottomNav />
+
       <Routes>
         <Route
           path="/"
@@ -27,6 +30,15 @@ function App() {
           path="/courses"
           element={
             <Courses setLoginModal={setLoginModal} loginModal={loginModal} />
+          }
+        ></Route>
+        <Route
+          path="/course/:title"
+          element={
+            <CourseDetail
+              setLoginModal={setLoginModal}
+              loginModal={loginModal}
+            />
           }
         ></Route>
         <Route
@@ -93,7 +105,6 @@ function App() {
           }
         />
       </Routes>
-      <BottomNav />
     </div>
   )
 }

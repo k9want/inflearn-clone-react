@@ -2660,6 +2660,8 @@ ol {
 }
 
 .banner {
+  position: relative;
+  z-index: 74;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2669,7 +2671,9 @@ ol {
   line-height: 20.02px;
   letter-spacing: -0.3px;
   color: #858a8d;
+  background-color: #fff;
 }
+
 .banner-wrapper {
   display: flex;
   align-items: center;
@@ -2731,6 +2735,12 @@ ol {
   background-color: #fff;
   box-shadow: 0 2px 4px 0 hsla(0deg, 0%, 81%, 0.5);
 }
+@media screen and (max-width: 1024px) {
+  .navbar {
+    z-index: 74;
+  }
+}
+
 .navbar.fixed {
   position: fixed;
   width: 100%;
