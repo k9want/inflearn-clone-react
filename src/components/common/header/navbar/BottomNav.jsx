@@ -1,31 +1,45 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled, { css } from 'styled-components'
+import BottomNavModal from './BottomNavModal'
 
 function BottomNav() {
-  const nav = ['/', '/courses', '/', '/roadmaps', '/community/reviews']
-  const [isActive, setIsActive] = useState([false, false, true, false, false])
+  const nav = ['/', '/courses', '/', '/roadmaps']
+  const [isActive, setIsActive] = useState([false, false, true, false])
+  const [isHiddenModal, setIsHiddenModal] = useState(true)
 
   const navigate = useNavigate()
 
-  const handleIsActive = (e, i) => {
-    let isActive_copy = [false, false, false, false, false]
-    isActive_copy[i] = !isActive_copy[i]
+  const handleIsActive = (i) => {
+    let isActive_copy = [false, false, false, false]
+    isActive_copy[i] = true
     setIsActive(isActive_copy)
+    setIsHiddenModal(true)
   }
 
   const onClickBottomNavItem = (e, i) => {
-    handleIsActive(e, i)
+    handleIsActive(i)
     navigate(nav[i])
+  }
+
+  const onClickMoreBottomNavItem = () => {
+    setIsHiddenModal(!isHiddenModal)
   }
 
   return (
     <BottomNavLayout>
       <h1>bottom navbar</h1>
+      {!isHiddenModal ? (
+        <BottomNavModal
+          setIsHiddenModal={setIsHiddenModal}
+          setIsActive={setIsActive}
+        />
+      ) : null}
+
       <BottomNavList>
         <BottomNavItem
           isActive={isActive[0]}
-          value={'/'}
+          isHiddenModal={isHiddenModal}
           onClick={(e) => onClickBottomNavItem(e, 0)}
         >
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -35,6 +49,7 @@ function BottomNav() {
         </BottomNavItem>
         <BottomNavItem
           isActive={isActive[1]}
+          isHiddenModal={isHiddenModal}
           onClick={(e) => onClickBottomNavItem(e, 1)}
         >
           <svg
@@ -57,6 +72,7 @@ function BottomNav() {
         </BottomNavItem>
         <BottomNavItem
           isActive={isActive[2]}
+          isHiddenModal={isHiddenModal}
           onClick={(e) => onClickBottomNavItem(e, 2)}
         >
           <svg
@@ -76,6 +92,7 @@ function BottomNav() {
         </BottomNavItem>
         <BottomNavItem
           isActive={isActive[3]}
+          isHiddenModal={isHiddenModal}
           onClick={(e) => onClickBottomNavItem(e, 3)}
         >
           <svg
@@ -88,9 +105,9 @@ function BottomNav() {
           </svg>
           <span>로드맵</span>
         </BottomNavItem>
-        <BottomNavItem
-          isActive={isActive[4]}
-          onClick={(e) => onClickBottomNavItem(e, 4)}
+        <BottomNavItemMoreButton
+          isHiddenModal={isHiddenModal}
+          onClick={() => onClickMoreBottomNavItem()}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +124,7 @@ function BottomNav() {
             <circle fill="none" cx="25" cy="16" r="2" />
           </svg>
           <span>더보기</span>
-        </BottomNavItem>
+        </BottomNavItemMoreButton>
       </BottomNavList>
     </BottomNavLayout>
   )
@@ -129,7 +146,7 @@ const BottomNavLayout = styled.nav`
   }
 `
 
-const BottomNavList = styled.div`
+const BottomNavList = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -137,15 +154,15 @@ const BottomNavList = styled.div`
   box-shadow: 0 -2px 4px 0 rgb(33 37 41 / 8%);
   background-color: #fff;
 
-  div:nth-child(3) {
+  li:nth-child(3) {
     svg {
       fill: #fff;
       stroke: currentColor;
-      stroke-width: 24px;
+      stroke-width: 18px;
     }
   }
 
-  div:nth-child(4) {
+  li:nth-child(4) {
     svg {
       fill: #fff;
       stroke: currentColor;
@@ -154,7 +171,7 @@ const BottomNavList = styled.div`
   }
 `
 
-const BottomNavItem = styled.div`
+const BottomNavItem = styled.li`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -191,7 +208,57 @@ const BottomNavItem = styled.div`
   }
 
   ${(props) =>
+    props.isHiddenModal &&
     props.isActive &&
+    css`
+      svg {
+        stroke-width: 2.125px;
+        color: #1dc078;
+        fill: #1dc078 !important;
+      }
+      font-weight: 700;
+      color: #1dc078;
+    `}
+`
+
+const BottomNavItemMoreButton = styled.li`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 72px;
+  height: 100%;
+  padding: 8px;
+  padding-top: 10px;
+  color: #495057;
+  cursor: pointer;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 1;
+    color: #495057;
+  }
+
+  span {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  &:active {
+    svg {
+      stroke-width: 2.125px;
+      color: #1dc078;
+      fill: #1dc078 !important;
+    }
+    font-weight: 700;
+    color: #1dc078;
+  }
+
+  ${(props) =>
+    !props.isHiddenModal &&
     css`
       svg {
         stroke-width: 2.125px;
