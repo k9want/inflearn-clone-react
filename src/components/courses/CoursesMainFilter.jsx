@@ -35,6 +35,11 @@ function CoursesMainFilter() {
     setIsCheck([false, false, false, false, false, false])
   }
 
+  const onClickCancelButton = () => {
+    setIsHiddenFloatingBox(true)
+    setIsCheck(isActive)
+  }
+
   return (
     <div className="courses-filter">
       <div
@@ -43,89 +48,123 @@ function CoursesMainFilter() {
         }
       >
         <div
-          className="filter-item filter-left"
+          className="filter-item-left-right-wrapper"
           onClick={() => setIsHiddenFloatingBox(!isHiddenFloatingBox)}
         >
-          <i className="ic-slider"></i>
-          <span>필터</span>
-        </div>
-        <div
-          className="filter-right"
-          onClick={() => setIsHiddenFloatingBox(!isHiddenFloatingBox)}
-        >
-          <span className={'filter-item ' + (isActive[0] ? 'is-active' : null)}>
-            유료
-          </span>
-          <svg
-            width="10"
-            height="14"
-            viewBox="0 0 10 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5 8C5.55242 8 6 7.55242 6 7C6 6.44758 5.55242 6 5 6C4.44758 6 4 6.44758 4 7C4 7.55242 4.44758 8 5 8Z"
-              fill="#ABB0B5"
-            ></path>
-          </svg>
-          <span className={'filter-item ' + (isActive[1] ? 'is-active' : null)}>
-            무료
-          </span>
-          <svg
-            width="10"
-            height="14"
-            viewBox="0 0 10 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5 8C5.55242 8 6 7.55242 6 7C6 6.44758 5.55242 6 5 6C4.44758 6 4 6.44758 4 7C4 7.55242 4.44758 8 5 8Z"
-              fill="#ABB0B5"
-            ></path>
-          </svg>
-          <span className={'filter-item ' + (isActive[2] ? 'is-active' : null)}>
-            할인중
-          </span>
-          <span className="course-divider"></span>
-          <span className={'filter-item ' + (isActive[3] ? 'is-active' : null)}>
-            {' '}
-            입문{' '}
-          </span>
-          <svg
-            width="10"
-            height="14"
-            viewBox="0 0 10 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5 8C5.55242 8 6 7.55242 6 7C6 6.44758 5.55242 6 5 6C4.44758 6 4 6.44758 4 7C4 7.55242 4.44758 8 5 8Z"
-              fill="#ABB0B5"
-            ></path>
-          </svg>
-          <span className={'filter-item ' + (isActive[4] ? 'is-active' : null)}>
-            {' '}
-            초급{' '}
-          </span>
-          <svg
-            width="10"
-            height="14"
-            viewBox="0 0 10 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5 8C5.55242 8 6 7.55242 6 7C6 6.44758 5.55242 6 5 6C4.44758 6 4 6.44758 4 7C4 7.55242 4.44758 8 5 8Z"
-              fill="#ABB0B5"
-            ></path>
-          </svg>
-          <span className={'filter-item ' + (isActive[5] ? 'is-active' : null)}>
-            {' '}
-            중급이상{' '}
-          </span>
+          <div className="filter-item filter-left">
+            <i className="ic-slider"></i>
+            <span>필터</span>
+          </div>
+          <div className="filter-right">
+            <span
+              className={'filter-item ' + (isActive[0] ? 'is-active' : null)}
+            >
+              유료
+            </span>
+            <svg
+              width="10"
+              height="14"
+              viewBox="0 0 10 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 8C5.55242 8 6 7.55242 6 7C6 6.44758 5.55242 6 5 6C4.44758 6 4 6.44758 4 7C4 7.55242 4.44758 8 5 8Z"
+                fill="#ABB0B5"
+              ></path>
+            </svg>
+            <span
+              className={'filter-item ' + (isActive[1] ? 'is-active' : null)}
+            >
+              무료
+            </span>
+            <svg
+              width="10"
+              height="14"
+              viewBox="0 0 10 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 8C5.55242 8 6 7.55242 6 7C6 6.44758 5.55242 6 5 6C4.44758 6 4 6.44758 4 7C4 7.55242 4.44758 8 5 8Z"
+                fill="#ABB0B5"
+              ></path>
+            </svg>
+            <span
+              className={'filter-item ' + (isActive[2] ? 'is-active' : null)}
+            >
+              할인중
+            </span>
+            <span className="course-divider"></span>
+            <span
+              className={'filter-item ' + (isActive[3] ? 'is-active' : null)}
+            >
+              {' '}
+              입문{' '}
+            </span>
+            <svg
+              width="10"
+              height="14"
+              viewBox="0 0 10 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 8C5.55242 8 6 7.55242 6 7C6 6.44758 5.55242 6 5 6C4.44758 6 4 6.44758 4 7C4 7.55242 4.44758 8 5 8Z"
+                fill="#ABB0B5"
+              ></path>
+            </svg>
+            <span
+              className={'filter-item ' + (isActive[4] ? 'is-active' : null)}
+            >
+              {' '}
+              초급{' '}
+            </span>
+            <svg
+              width="10"
+              height="14"
+              viewBox="0 0 10 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 8C5.55242 8 6 7.55242 6 7C6 6.44758 5.55242 6 5 6C4.44758 6 4 6.44758 4 7C4 7.55242 4.44758 8 5 8Z"
+                fill="#ABB0B5"
+              ></path>
+            </svg>
+            <span
+              className={'filter-item ' + (isActive[5] ? 'is-active' : null)}
+            >
+              {' '}
+              중급이상{' '}
+            </span>
+          </div>
         </div>
         <div className="filter-floating-box">
           <div className="floating-box-wrapper">
+            <h4 className="sm-only floating-box-header">
+              필터 설정
+              <span
+                className="floating-box-close-btn"
+                onClick={() => {
+                  onClickCancelButton()
+                }}
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 12 12"
+                >
+                  <path
+                    fill="#abb0b5"
+                    fill-rule="evenodd"
+                    d="M.203.203c.27-.27.708-.27.979 0L6 5.02 10.818.203c.27-.27.709-.27.98 0 .27.27.27.708 0 .979L6.978 6l4.818 4.818c.27.27.27.709 0 .98-.27.27-.709.27-.979 0L6 6.978l-4.818 4.818c-.27.27-.709.27-.98 0-.27-.27-.27-.709 0-.979L5.022 6 .203 1.182c-.27-.27-.27-.709 0-.98z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </span>
+            </h4>
             <div className="floating-box-content-group">
               <div className="floating-box-content">
                 <div className="floating-box-title">유/무료</div>
@@ -339,6 +378,14 @@ function CoursesMainFilter() {
           </div>
         </div>
       </div>
+      {!isHiddenFloatingBox ? (
+        <div
+          className="floating-box-active sm-only"
+          onClick={() => {
+            onClickCancelButton()
+          }}
+        ></div>
+      ) : null}
       <div className="filter-select">
         <select name="order-select" id="courses-order-select">
           <option value="rating">추천순</option>
