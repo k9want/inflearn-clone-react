@@ -124,7 +124,7 @@ function BottomNav() {
               fill="none"
               stroke="currentcolor"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               strokeWidth="1.5px"
             >
               <circle fill="none" cx="7" cy="16" r="2" />
