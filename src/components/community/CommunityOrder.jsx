@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
-import { Select, SelectWrapper } from '../mentors/MentorsMainLeft'
+import { Select } from '../mentors/MentorsMainLeft'
 
 function CommunityOrder({ order, now }) {
   const optionValue = ['recent', 'score', 'comment', 'recommend']
@@ -52,7 +52,6 @@ function CommunityOrder({ order, now }) {
               <option
                 value={optionValue[i]}
                 key={i}
-                isActive={isActiveOrder[i]}
                 onClick={() => onClickOrderItem(i)}
               >
                 {ord}
