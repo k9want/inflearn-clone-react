@@ -106,18 +106,34 @@ const CommunityArticlesBox = styled.div`
   display: flex;
   padding: 20px 16px;
   border-bottom: 1px solid #dee2e6;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px 0;
+  }
 `
 
 const CommunityArticlesInfoBox = styled.div`
   flex: 1 1 590px;
   width: 0;
   max-width: 590px;
+  @media screen and (max-width: 768px) {
+    flex: 1 1 110px;
+    width: 100%;
+    margin-bottom: 24px;
+  }
 `
 
 const CommunityArticlesTitleBox = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
 `
 const CommunityArticlesTitleSpan = styled.span`
   background-color: #adb5bd;
@@ -138,6 +154,9 @@ const CommunityArticlesTitleSpan = styled.span`
     css`
       background-color: #00c471;
     `}
+  @media screen and (max-width: 768px) {
+    margin-bottom: 4px;
+  }
 `
 
 const CommunityArticlesTitle = styled.h3`
@@ -204,6 +223,14 @@ const CommunityArticlesAdditionalInfoBox = styled.div`
   align-items: center;
   margin-left: auto;
   max-width: 146px;
+
+  @media screen and (max-width: 768px) {
+    flex: 1 1 90px;
+    flex-direction: row;
+    margin-left: 0;
+    max-width: 100%;
+    max-height: 42px;
+  }
 `
 
 const CommunityArticlesCommentBox = styled.div`
@@ -220,6 +247,17 @@ const CommunityArticlesCommentBox = styled.div`
     font-size: 12px;
     font-weight: 500;
     color: #616568;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: row;
+    width: 80px;
+    height: 42px;
+    border-radius: 100px;
+
+    strong {
+      margin-right: 5px;
+    }
   }
 `
 

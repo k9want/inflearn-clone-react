@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
+import { Select, SelectWrapper } from '../mentors/MentorsMainLeft'
 
 function CommunityOrder({ order, now }) {
+  const optionValue = ['recent', 'score', 'comment', 'recommend']
   const [isActiveOrder, setIsActiveOrder] = useState([
     true,
     false,
@@ -43,6 +45,22 @@ function CommunityOrder({ order, now }) {
           )
         })}
       </CommunityOrderList>
+      <CommunityOrderSelectWrapper>
+        <CommunityOrderSelect name="order">
+          {order.map((ord, i) => {
+            return (
+              <option
+                value={optionValue[i]}
+                key={i}
+                isActive={isActiveOrder[i]}
+                onClick={() => onClickOrderItem(i)}
+              >
+                {ord}
+              </option>
+            )
+          })}
+        </CommunityOrderSelect>
+      </CommunityOrderSelectWrapper>
       <div>
         {now === 2 ? (
           <CommunityStudiesButton
@@ -80,7 +98,7 @@ function CommunityOrder({ order, now }) {
               clipRule="evenodd"
             ></path>
           </svg>
-          글쓰기
+          <span>글쓰기</span>
         </CommunityOrderButton>
       </div>
     </CommunityOrderBox>
@@ -97,6 +115,10 @@ const CommunityOrderBox = styled.div`
 const CommunityOrderList = styled.ul`
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 
 const CommunityOrderItem = styled.li`
@@ -134,6 +156,32 @@ const CommunityOrderItem = styled.li`
       `}
   }
 `
+const CommunityOrderSelectWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const CommunityOrderSelect = styled(Select)`
+  display: none;
+  border: none;
+  font-size: 14px;
+  color: #616568;
+  font-weight: 500;
+  padding-right: 19px;
+
+  &:focus-within {
+    box-shadow: none;
+  }
+
+  option {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+`
 
 const CommunityOrderButton = styled.button`
   display: inline-flex;
@@ -155,6 +203,15 @@ const CommunityOrderButton = styled.button`
 
   svg {
     margin-right: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    svg {
+      margin-right: 0;
+    }
+    span {
+      display: none;
+    }
   }
 `
 

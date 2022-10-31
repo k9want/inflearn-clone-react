@@ -27,6 +27,10 @@ const CommunityTagsLayout = styled.div`
   flex: 1 0 196px;
   margin-left: 40px;
   max-width: 196px;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 `
 const CommunityTagsBox = styled.div`
   margin-top: 32px;

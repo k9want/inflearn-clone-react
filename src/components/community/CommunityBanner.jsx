@@ -35,6 +35,22 @@ export const CommunityWrapper = styled.div`
       line-height: normal;
     }
   }
+
+  @media screen and (max-width: 1024px) {
+    padding: 24px 32px;
+  }
+
+  @media screen and (max-width: 768px) {
+    div {
+      h1 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
 `
 
 export default CommunityBanner

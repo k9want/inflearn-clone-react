@@ -56,17 +56,31 @@ function CommunityForm({ formPlaceholder }) {
           초기화
         </CommunityFormButton>
       </CommunityFormBox>
+      <CommunityFormSearchButton>검색</CommunityFormSearchButton>
     </CommunityFormLayout>
   )
 }
 
 const CommunityFormLayout = styled.div`
-  padding: 20px 0 38px;
+  padding: 20px 0 22px;
+
+  @media screen and (min-width: 769px) {
+    padding-bottom: 38px;
+    & > button {
+      display: none;
+    }
+  }
 `
 
 const CommunityFormBox = styled.div`
   display: flex;
   margin-bottom: 10px;
+
+  @media screen and (max-width: 768px) {
+    button {
+      display: none;
+    }
+  }
 `
 
 const CommunityFormInputBox = styled.div`
@@ -122,6 +136,12 @@ const CommunityFormButton = styled.button`
   -webkit-appearance: none;
   svg {
     margin-right: 12px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 40px;
+    margin-left: 0;
   }
 `
 

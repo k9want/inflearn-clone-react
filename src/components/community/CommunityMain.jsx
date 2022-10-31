@@ -40,6 +40,14 @@ const CommunityMainSection = styled.main`
   flex: 1;
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 1024px) {
+    padding: 32px 32px 64px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 24px 18px 48px;
+  }
 `
 
 export default CommunityMain
