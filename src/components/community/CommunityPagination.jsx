@@ -41,9 +41,9 @@ function CommunityPagination({ page }) {
   return (
     <CommunityPaginationLayout>
       {!pageButton[0] ? (
-        <CommunityPaginationButton onClick={() => onClickBeforeButton()}>
+        <CommunityPaginationBeforeButton onClick={() => onClickBeforeButton()}>
           이전 페이지
-        </CommunityPaginationButton>
+        </CommunityPaginationBeforeButton>
       ) : (
         <button></button>
       )}
@@ -65,9 +65,9 @@ function CommunityPagination({ page }) {
         </CommunityPaginationList>
       </CommunityPaginationNav>
       {!pageButton[page.length - 1] ? (
-        <CommunityPaginationButton onClick={() => onClickNextButton()}>
+        <CommunityPaginationNextButton onClick={() => onClickNextButton()}>
           다음 페이지
-        </CommunityPaginationButton>
+        </CommunityPaginationNextButton>
       ) : (
         <button></button>
       )}
@@ -79,11 +79,19 @@ const CommunityPaginationLayout = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 36px;
+  }
 `
 
 const CommunityPaginationNav = styled.nav`
   display: flex;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    order: 3;
+  }
 `
 
 const CommunityPaginationList = styled.ul`
@@ -170,4 +178,21 @@ const CommunityPaginationButton = styled.button`
     border-color: #3273dc;
   }
 `
+
+const CommunityPaginationBeforeButton = styled(CommunityPaginationButton)`
+  @media screen and (max-width: 768px) {
+    flex-grow: 1;
+    flex-shrink: 1;
+    order: 1;
+  }
+`
+
+const CommunityPaginationNextButton = styled(CommunityPaginationButton)`
+  @media screen and (max-width: 768px) {
+    flex-grow: 1;
+    flex-shrink: 1;
+    order: 2;
+  }
+`
+
 export default CommunityPagination

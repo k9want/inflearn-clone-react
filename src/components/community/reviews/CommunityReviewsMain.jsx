@@ -12,14 +12,11 @@ function CommunityReviewsMain({ navNow, data, page }) {
         <svg
           key={i}
           aria-hidden="true"
-          data-prefix="fas"
-          data-icon="star"
           role="img"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 576 512"
           width="16"
           height="16"
-          data-value="1"
         >
           <path
             fill="currentColor"
@@ -33,14 +30,11 @@ function CommunityReviewsMain({ navNow, data, page }) {
         <svg
           key={i}
           aria-hidden="true"
-          data-prefix="fal"
-          data-icon="star"
           role="img"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 576 512"
           width="16"
           height="16"
-          data-value="5"
         >
           <path
             fill="currentColor"
@@ -170,6 +164,14 @@ const CommunityReviewsMainList = styled.ul`
   li:first-child {
     border: none;
   }
+
+  @media screen and (max-width: 1024px) {
+    padding: 12px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 20px;
+  }
 `
 const CommunityReviewsMainItem = styled.li`
   display: flex;
@@ -177,6 +179,10 @@ const CommunityReviewsMainItem = styled.li`
   align-items: center;
   padding: 0.5em 1em;
   border-top: 1px solid hsla(0, 0%, 85.9%, 0.5);
+
+  @media screen and (max-width: 1024px) {
+    padding: 8px 0;
+  }
 `
 
 const CommunityReviewsMainItemInfoBox = styled.div`

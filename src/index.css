@@ -2089,6 +2089,15 @@ ol {
   background-color: #fff;
   z-index: 84;
 }
+
+@media screen and (max-width: 768px) {
+  .signUp-send {
+    padding: 3rem 1rem;
+    width: 100%;
+    height: auto;
+  }
+}
+
 .signUp-send-info {
   max-width: 500px;
 }
