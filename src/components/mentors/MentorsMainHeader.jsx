@@ -89,7 +89,9 @@ const MentorsMainHeaderLeft = styled.div`
   max-width: 50%;
 `
 
-const MentorsMainHeaderRight = styled.div``
+const MentorsMainHeaderRight = styled.div`
+  max-width: 50%;
+`
 
 const MentorsMainHeaderRightInputWrapper = styled(InputWrapper)`
   height: 36px;

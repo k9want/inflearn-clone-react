@@ -89,6 +89,25 @@ const MentorsMainCardListWrapper = styled.div`
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
   }
+
+  @media screen and (max-width: 1024px) {
+    padding-left: 0;
+    margin-top: 20px;
+
+    > div {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding: 0 0.5rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    > div {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      padding: 0 0.25rem;
+    }
+  }
 `
 
 const MentorsMainPagination = styled.nav`

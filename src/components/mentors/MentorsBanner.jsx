@@ -1,13 +1,47 @@
 import React from 'react'
 import styled from 'styled-components'
-const Wrapper = styled.a`
+
+function MentorsBanner() {
+  return (
+    <MentorsBannersLayout href="/mentors">
+      <Container>
+        <MentorBannersBox />
+        <Info>
+          <h3>멘토링</h3>
+          <p>
+            업계 선배들 혹은 동료들과 인사이트를 나눠 보세요. <br />더 빨리, 더
+            멀리 갈 수 있어요.
+          </p>
+          <span>
+            멘토 지원하기{' '}
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clipRule="evenodd"
+                d="m6.22 3.22c.293-.293.767-.293 1.06 0l4.25 4.25c.293.293.293.767 0 1.06l-4.25 4.25c-.293.293-.767.293-1.06 0s-.293-.767 0-1.06l3.72-3.72-3.72-3.72c-.293-.293-.293-.767 0-1.06z"
+                fillRule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </Info>
+        <MentorBannersBox />
+      </Container>
+    </MentorsBannersLayout>
+  )
+}
+
+const MentorsBannersLayout = styled.a`
   display: block;
   cursor: pointer;
   height: 100%;
   background-color: #b9f1f1;
 `
 
-const MentorBanner = styled.div`
+const MentorBannersBox = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -16,6 +50,11 @@ const MentorBanner = styled.div`
   background-image: url(https://cdn.inflearn.com/public/mentors/mentors_banner_w.png);
   background-position: calc(100% + 80px) 30%;
   background-repeat: no-repeat;
+
+  @media screen and (max-width: 768px) {
+    background-image: url(https://cdn.inflearn.com/public/mentors/mentors_banner_m_v2.png);
+    background-position: calc(100% - 10px) 100%;
+  }
 `
 
 const Container = styled.div`
@@ -23,6 +62,10 @@ const Container = styled.div`
   padding: 31px 2rem 38px;
   margin: auto;
   max-width: 1200px;
+
+  @media screen and (max-width: 768px) {
+    padding: 19px 16px 27px;
+  }
 `
 const Info = styled.div`
   h3 {
@@ -61,37 +104,5 @@ const Info = styled.div`
     fill: #175cbe;
   }
 `
-
-function MentorsBanner() {
-  return (
-    <Wrapper href="/mentors">
-      <Container>
-        <Info>
-          <h3>멘토링</h3>
-          <p>
-            업계 선배들 혹은 동료들과 인사이트를 나눠 보세요. <br />더 빨리, 더
-            멀리 갈 수 있어요.
-          </p>
-          <span>
-            멘토 지원하기{' '}
-            <svg
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                clipRule="evenodd"
-                d="m6.22 3.22c.293-.293.767-.293 1.06 0l4.25 4.25c.293.293.293.767 0 1.06l-4.25 4.25c-.293.293-.767.293-1.06 0s-.293-.767 0-1.06l3.72-3.72-3.72-3.72c-.293-.293-.293-.767 0-1.06z"
-                fillRule="evenodd"
-              ></path>
-            </svg>
-          </span>
-        </Info>
-        <MentorBanner />
-      </Container>
-    </Wrapper>
-  )
-}
 
 export default MentorsBanner

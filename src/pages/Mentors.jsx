@@ -5,9 +5,6 @@ import Header from '../components/common/header/Header'
 import MentorsBanner from '../components/mentors/MentorsBanner'
 import MentorsMain from '../components/mentors/MentorsMain'
 import useLoginModal from '../hook/useLoginModal'
-const MentorsWrapper = styled.div`
-  background-color: #f8f9fa;
-`
 
 function Mentors(props) {
   return (
@@ -24,5 +21,9 @@ function Mentors(props) {
     </>
   )
 }
+
+const MentorsWrapper = styled.div`
+  background-color: #f8f9fa;
+`
 
 export default Mentors

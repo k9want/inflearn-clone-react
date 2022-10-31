@@ -3,7 +3,7 @@ import { useState } from 'react'
 import styled, { css } from 'styled-components'
 import selectDownSrc from '../../assets/images/index/select-down.png'
 
-function MentorsMainLeft() {
+function MentorsMainLeft({ isHidden, setIsHidden }) {
   const [isCheck, setIsCheck] = useState([
     false,
     false,
@@ -23,8 +23,17 @@ function MentorsMainLeft() {
     setIsCheck(isCheckCopy)
   }
 
+  const onClickResetButton = () => {
+    setIsCheck([false, false, false, false, false, false, false, false, false])
+  }
+
   return (
-    <Wrapper className="lg-only">
+    <Wrapper isHidden={isHidden}>
+      <FilterActive
+        onClick={() => {
+          setIsHidden(true)
+        }}
+      />
       <InputWrapper>
         <input type="text" />
         <button type="button">검색</button>
@@ -108,7 +117,7 @@ function MentorsMainLeft() {
         </NavList>
       </NavWrapper>
 
-      <FilterReset href="/mentors">
+      <FilterReset onClick={() => onClickResetButton()}>
         <i className="ic-sync"></i>
         &nbsp;&nbsp; 필터 초기화
       </FilterReset>
@@ -123,11 +132,48 @@ const Wrapper = styled.div`
   top: 84px;
   text-align: left;
   height: 100%;
+
+  @media screen and (max-width: 1024px) {
+    position: fixed;
+    width: 228px;
+    background: #fff;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-right: 1px solid #efefef;
+    z-index: 86;
+
+    ${(props) =>
+      props.isHidden &&
+      css`
+        display: none;
+      `}
+  }
 `
 
-const InputWrapper = styled.div`
+const FilterActive = styled.div`
+  display: none;
+  left: 0;
+
+  @media screen and (max-width: 1024px) {
+    display: block;
+    position: fixed;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.3);
+    left: 228px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: opacity 0.2s, 0.3s;
+  }
+`
+
+export const InputWrapper = styled.div`
   display: flex;
   background: #fff;
+  height: 44px;
 
   input {
     width: 100%;
@@ -164,13 +210,18 @@ const InputWrapper = styled.div`
       box-shadow: 0 0 0 0.2em rgba(29, 192, 120, 0.25);
     }
   }
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 `
 
-const SelectWrapper = styled.div`
+export const SelectWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 44px;
   margin-top: 16px;
+  background: #fff;
 
   select {
     background: url(${selectDownSrc}) no-repeat 90% 50%/11px auto;
@@ -183,9 +234,12 @@ const SelectWrapper = styled.div`
     -moz-appearance: none;
     appearance: none;
   }
+  @media screen and (max-width: 1024px) {
+    padding: 0 12px;
+  }
 `
 
-const Select = styled.select`
+export const Select = styled.select`
   display: block;
   height: 100%;
   color: #333;
@@ -193,7 +247,6 @@ const Select = styled.select`
   width: 100%;
   border: 1px solid #e4e4e4;
   border-radius: 4px;
-  background: #fff;
   padding: 5px 40px 5px 9px;
   :focus-within {
     box-shadow: 0 0 0 0.125em rgba(29, 192, 120, 0.25);
@@ -202,9 +255,15 @@ const Select = styled.select`
 `
 
 const NavWrapper = styled.div`
+  background: #fff;
   margin-top: 24px;
   border: 1px solid #dedede;
   border-radius: 4px;
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 16px;
+    border: none;
+  }
 `
 
 const NavToggle = styled.div`
@@ -241,7 +300,6 @@ const NavList = styled.div`
   justify-content: center;
   display: block;
   font-size: 1rem;
-  background-color: #fff;
   padding: 0.875rem;
   border-radius: 4px;
   margin-bottom: 0;
@@ -301,7 +359,7 @@ const NavCheckBox = styled.div`
   }
 `
 
-const FilterReset = styled.a`
+const FilterReset = styled.div`
   display: inline-block;
   background: none;
   border: 0;
@@ -313,6 +371,10 @@ const FilterReset = styled.a`
 
   :hover {
     color: #454545;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding-left: calc(2rem - 10px);
   }
 `
 

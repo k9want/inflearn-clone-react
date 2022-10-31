@@ -75,6 +75,11 @@ const MentorsCardWrapper = styled.div`
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgb(0, 0, 0, 8%);
   }
+
+  @media screen and (max-width: 768px) {
+    padding: 16px;
+    min-height: 217px;
+  }
 `
 
 const MentorsCardTop = styled.div`
@@ -101,6 +106,11 @@ const MentorsCardTitle = styled.h3`
   color: #1b1c1d;
   margin-bottom: 8px;
   line-height: 24px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 15px;
+    line-height: 22px;
+  }
 `
 
 const MentorsInfo = styled.dl`
@@ -116,6 +126,26 @@ const MentorsInfo = styled.dl`
 
   dt {
     margin-right: 10px;
+    white-space: nowrap;
+
+    @media screen and (max-width: 768px) {
+      position: absolute;
+      overflow: hidden;
+      width: 1px;
+      height: 1px;
+      clip: rect(1px, 1px, 1px, 1px);
+    }
+  }
+
+  dd {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-all;
+    text-align: left;
   }
 `
 
@@ -123,6 +153,8 @@ const MentorsCompany = styled.div`
   dd {
     font-weight: 500;
     color: #009d5a;
+    line-height: 20px;
+    padding-right: 44px;
   }
 `
 
@@ -215,6 +247,12 @@ const MentorsCardRating = styled.button`
     letter-spacing: -0.3px;
     font-size: 14px;
     font-weight: 500;
+  }
+
+  @media screen and (max-width: 768px) {
+    i:last-child {
+      display: none;
+    }
   }
 `
 
